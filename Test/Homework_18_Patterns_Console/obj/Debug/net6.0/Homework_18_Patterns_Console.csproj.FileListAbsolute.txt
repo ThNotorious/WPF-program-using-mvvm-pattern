@@ -1,0 +1,15 @@
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\bin\Debug\net6.0\Homework_18_Patterns_Console.exe
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\bin\Debug\net6.0\Homework_18_Patterns_Console.deps.json
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\bin\Debug\net6.0\Homework_18_Patterns_Console.runtimeconfig.json
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\bin\Debug\net6.0\Homework_18_Patterns_Console.dll
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\bin\Debug\net6.0\Homework_18_Patterns_Console.pdb
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\obj\Debug\net6.0\Homework_18_Patterns_Console.csproj.AssemblyReference.cache
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\obj\Debug\net6.0\Homework_18_Patterns_Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\obj\Debug\net6.0\Homework_18_Patterns_Console.AssemblyInfoInputs.cache
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\obj\Debug\net6.0\Homework_18_Patterns_Console.AssemblyInfo.cs
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\obj\Debug\net6.0\Homework_18_Patterns_Console.csproj.CoreCompileInputs.cache
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\obj\Debug\net6.0\Homework_18_Patterns_Console.dll
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\obj\Debug\net6.0\refint\Homework_18_Patterns_Console.dll
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\obj\Debug\net6.0\Homework_18_Patterns_Console.pdb
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\obj\Debug\net6.0\Homework_18_Patterns_Console.genruntimeconfig.cache
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Test\Homework_18_Patterns_Console\obj\Debug\net6.0\ref\Homework_18_Patterns_Console.dll

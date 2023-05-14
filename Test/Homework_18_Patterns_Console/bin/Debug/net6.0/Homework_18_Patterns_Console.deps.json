@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Homework_18_Patterns_Console/1.0.0": {
+        "runtime": {
+          "Homework_18_Patterns_Console.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Homework_18_Patterns_Console/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
