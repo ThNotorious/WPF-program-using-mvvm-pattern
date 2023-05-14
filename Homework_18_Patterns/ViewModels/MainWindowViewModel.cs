@@ -1,4 +1,7 @@
-﻿using Homework_18_Patterns.ViewModels.Base;
+﻿using Homework_18_Patterns.Infrastructure.Commands;
+using Homework_18_Patterns.ViewModels.Base;
+using System.Windows;
+using System.Windows.Input;
 
 namespace Homework_18_Patterns.ViewModels
 {
@@ -36,5 +39,32 @@ namespace Homework_18_Patterns.ViewModels
             set => Set(ref _status, value); 
         }
         #endregion
+
+        #region  Команды 
+
+        #region  CloseApplicationCommand
+
+        public ICommand CloseApplicationCommand { get; }
+
+        private bool OnCloseApplicationCommandExecuted(object p) => true;
+
+        private void CanCloseApplicationCommandExecute(object p)
+        {
+            Application.Current.Shutdown();
+        }
+
+        #endregion
+        
+        #endregion
+
+
+        public MainWindowViewModel()
+        {
+            #region  Команды 
+            
+            CloseApplicationCommand = new LambdaCommand(CanCloseApplicationCommandExecute, OnCloseApplicationCommandExecuted);
+
+            #endregion
+        }
     }
 }
