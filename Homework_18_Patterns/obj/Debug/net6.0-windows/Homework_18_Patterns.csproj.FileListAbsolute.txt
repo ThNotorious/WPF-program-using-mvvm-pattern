@@ -4,11 +4,9 @@ C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\bin\Debug\net6.0-windows\Homework_18_Patterns.dll
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\bin\Debug\net6.0-windows\Homework_18_Patterns.pdb
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Homework_18_Patterns.csproj.AssemblyReference.cache
-C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Homework_18_Patterns_MarkupCompile.cache
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Homework_18_Patterns_MarkupCompile.lref
-C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Homework_18_Patterns.g.resources
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Homework_18_Patterns.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Homework_18_Patterns.AssemblyInfoInputs.cache
@@ -19,3 +17,5 @@ C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Homework_18_Patterns.pdb
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Homework_18_Patterns.genruntimeconfig.cache
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\ref\Homework_18_Patterns.dll
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Views\Windows\MainWindow.g.cs
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Views\Windows\MainWindow.baml
