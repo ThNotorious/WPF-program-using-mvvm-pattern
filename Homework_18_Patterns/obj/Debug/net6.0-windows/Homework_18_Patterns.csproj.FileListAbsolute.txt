@@ -20,3 +20,7 @@ C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Views\Windows\MainWindow.g.cs
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Views\Windows\MainWindow.baml
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Homework_18_Patterns.csproj.CopyComplete

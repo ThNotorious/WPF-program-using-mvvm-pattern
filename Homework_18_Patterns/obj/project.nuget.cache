@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "7DJSfmmOJ/hZlkLd6lkVaf6kSM8VxZekFD1kPbvP8EuikK1FhB1/AgDCNJECf0X1o955f9crQI9jOyxQtG0/1A==",
+  "dgSpecHash": "zYva8EpU3GZysmxM4pcUygBzVwCdQLo/YLKExLALQNxr6CG5E9Nedkn6TXB//nsckOF6FJxxLiWNHlv+lBBAxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\goldb\\OneDrive\\Рабочий стол\\C#\\Homework_18_Patterns\\Homework_18_Patterns\\Homework_18_Patterns.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\goldb\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
+    "C:\\Users\\goldb\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",
+    "C:\\Users\\goldb\\.nuget\\packages\\materialdesignthemes\\4.9.0\\materialdesignthemes.4.9.0.nupkg.sha512",
+    "C:\\Users\\goldb\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
   "logs": []
 }
