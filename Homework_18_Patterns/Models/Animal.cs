@@ -20,7 +20,7 @@
         /// <summary>
         /// Возраст животного
         /// </summary>
-        public string Age { get; set; }
+        public int Age { get; set; }
 
         /// <summary>
         /// Гендер животного
