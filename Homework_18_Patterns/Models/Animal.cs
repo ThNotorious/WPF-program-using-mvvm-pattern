@@ -30,7 +30,7 @@
         /// <summary>
         /// Вид животного
         /// </summary>
-        public EnimalSpecies Species { get; set; }
+        public AnimalSpecies Species { get; set; }
 
         /// <summary>
         /// Id вида животного

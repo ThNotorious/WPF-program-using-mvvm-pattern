@@ -2,7 +2,7 @@
 
 namespace Homework_18_Patterns.Models
 {
-    internal class EnimalClass
+    internal class AnimalClass
     {
         /// <summary>
         /// ID класса
@@ -17,6 +17,6 @@ namespace Homework_18_Patterns.Models
         /// <summary>
         /// Список видов
         /// </summary>
-        public List<EnimalSpecies> Species { get; set; }
+        public List<AnimalSpecies> Species { get; set; }
     }
 }

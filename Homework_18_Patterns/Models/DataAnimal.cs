@@ -1,6 +1,6 @@
 ﻿namespace Homework_18_Patterns.Models
 {
-    internal static class DataEnimal
+    internal static class DataAnimal
     {
         //Создать класс
 
