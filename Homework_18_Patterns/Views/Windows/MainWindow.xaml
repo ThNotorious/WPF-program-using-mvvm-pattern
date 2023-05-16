@@ -31,28 +31,110 @@
             </StatusBarItem>
         </StatusBar>
         <TabControl>
-            <TabItem Header="Вкладка 1">
+            <TabItem Header="Животные">
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="123*"/>
-                        <ColumnDefinition Width="274*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height ="33*"/>
-                        <RowDefinition Height ="64*"/>
-                    </Grid.RowDefinitions>
-                    <Rectangle Grid.Column="0" Grid.Row="0"
-                        Fill="AliceBlue" 
-                        Stroke="Red" 
-                        StrokeThickness="3" 
-                        RadiusX="5" RadiusY="7"/>
+                    <DataGrid   x:Name="DataGridEnimals"
+                    IsSynchronizedWithCurrentItem="True"
+                    SelectionMode="Single" 
+                    AutoGenerateColumns="False" 
+                    CanUserAddRows="False"
+                    IsReadOnly="False"
+                    FontSize="20">
 
-                    <GridSplitter Grid.Column="0" Grid.RowSpan="2"
-                                  HorizontalAlignment="Right"
-                                  Width="4"/>
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="Кличка"
+                                    Binding="{Binding SecondName}"/>
+
+                            <DataGridTextColumn Header="Окрас" 
+                                    Binding="{Binding FirstName}"/>
+
+                            <DataGridTextColumn Header="Возраст" 
+                                    Binding="{Binding MiddleName}"/>
+
+                            <DataGridTextColumn Header="Пол" 
+                                    Binding="{Binding PhoneNumber}"/>
+                            
+                            <DataGridTextColumn Header="Вид" 
+                                    Binding="{Binding PhoneNumber}"/> 
+                            
+                            <DataGridTextColumn Header="Класс" 
+                                    Binding="{Binding PhoneNumber}"/>
+
+                        </DataGrid.Columns>
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Удалить"/>
+                                <MenuItem Header="Оформить заказ"/>
+                                <MenuItem Header="Изменить данные"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Вкладка 2"></TabItem>
+            <TabItem Header="Вид">
+
+                <Grid>
+                    <DataGrid x:Name="DataGridSpecies"
+                    IsSynchronizedWithCurrentItem="True"
+                    SelectionMode="Single" 
+                    AutoGenerateColumns="False" 
+                    CanUserAddRows="False"
+                    IsReadOnly="False"
+                    FontSize="20">
+
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="Название вида"
+                                    Binding="{Binding SecondName}"/>
+                            
+                            <DataGridTextColumn Header="Класс" 
+                                    Binding="{Binding PhoneNumber}"/>
+ 
+                            <DataGridTextColumn Header="Количество животных" 
+                                    Binding="{Binding PhoneNumber}"/>
+
+                        </DataGrid.Columns>
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Удалить"/>
+                                <MenuItem Header="Оформить заказ"/>
+                                <MenuItem Header="Изменить данные"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Класс">
+                <Grid>
+                    <DataGrid x:Name="DataGridClass"
+                    IsSynchronizedWithCurrentItem="True"
+                    SelectionMode="Single" 
+                    AutoGenerateColumns="False" 
+                    CanUserAddRows="False"
+                    IsReadOnly="False"
+                    FontSize="20">
+
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="Название класса"
+                                    Binding="{Binding SecondName}"/>
+                            
+                            <DataGridTextColumn Header="Количество животных" 
+                                    Binding="{Binding PhoneNumber}"/>
+
+                        </DataGrid.Columns>
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Удалить"/>
+                                <MenuItem Header="Оформить заказ"/>
+                                <MenuItem Header="Изменить данные"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>
