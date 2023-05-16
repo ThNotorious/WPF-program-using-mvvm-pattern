@@ -14,7 +14,7 @@ namespace Homework_18_Patterns.Infrastructure.Commands
             _canExecute = CanExecute;
         }
 
-
+        
         public override bool CanExecute(object? parameter) => _canExecute?.Invoke(parameter) ?? true;
 
         public override void Execute(object? parameter) => _execute(parameter);

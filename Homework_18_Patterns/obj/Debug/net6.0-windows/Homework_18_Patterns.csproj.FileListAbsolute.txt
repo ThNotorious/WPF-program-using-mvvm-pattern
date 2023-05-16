@@ -24,3 +24,4 @@ C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
 C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\Homework_18_Patterns.csproj.CopyComplete
+C:\Users\goldb\OneDrive\Рабочий стол\C#\Homework_18_Patterns\Homework_18_Patterns\obj\Debug\net6.0-windows\App.baml
