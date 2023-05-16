@@ -5,12 +5,6 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework_18_Patterns", "Homework_18_Patterns\Homework_18_Patterns.csproj", "{4FC1D83F-7BFB-472E-936E-FAB903518488}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework_18_Patterns_Console", "Test\Homework_18_Patterns_Console\Homework_18_Patterns_Console.csproj", "{2E463D5D-0138-4C74-AC06-CD2BB275292E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework_18_Patterns_WpfTest", "Test\Homework_18_Patterns_WpfTest\Homework_18_Patterns_WpfTest.csproj", "{5C27F95A-BF6D-43D6-8D5F-F53D5F973938}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{EC099E6E-98B1-4386-BABA-B5736B63BE36}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,21 +15,9 @@ Global
 		{4FC1D83F-7BFB-472E-936E-FAB903518488}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FC1D83F-7BFB-472E-936E-FAB903518488}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FC1D83F-7BFB-472E-936E-FAB903518488}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2E463D5D-0138-4C74-AC06-CD2BB275292E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E463D5D-0138-4C74-AC06-CD2BB275292E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E463D5D-0138-4C74-AC06-CD2BB275292E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E463D5D-0138-4C74-AC06-CD2BB275292E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C27F95A-BF6D-43D6-8D5F-F53D5F973938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C27F95A-BF6D-43D6-8D5F-F53D5F973938}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C27F95A-BF6D-43D6-8D5F-F53D5F973938}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C27F95A-BF6D-43D6-8D5F-F53D5F973938}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{2E463D5D-0138-4C74-AC06-CD2BB275292E} = {EC099E6E-98B1-4386-BABA-B5736B63BE36}
-		{5C27F95A-BF6D-43D6-8D5F-F53D5F973938} = {EC099E6E-98B1-4386-BABA-B5736B63BE36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C28B076D-631F-4C21-A33E-A04234318711}
