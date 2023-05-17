@@ -10,12 +10,20 @@
     <Window.InputBindings>
         <KeyBinding Modifiers="Control" Key="Q" Command="{Binding CloseApplicationCommand}"/>
     </Window.InputBindings>
-    <Window.DataContext>
-        <vm:MainWindowViewModel/>
-    </Window.DataContext>
+    
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
+                <MenuItem Header="Добавить">
+                    <MenuItem Header="Животное"/>
+                    <MenuItem Header="Вид"/>
+                    <MenuItem Header="Класс"/>
+                </MenuItem>
+                <MenuItem Header="Сохранить как">
+                    <MenuItem Header="Excel"/>
+                    <MenuItem Header="PDF"/>
+                    <MenuItem Header="Текстовый документ"/>
+                </MenuItem>
                 <MenuItem Header="Выход" Command="{Binding CloseApplicationCommand}"/>
             </MenuItem>
             <MenuItem Header="Помощь">
@@ -33,13 +41,13 @@
         <TabControl>
             <TabItem Header="Животные">
                 <Grid>
-                    <DataGrid   x:Name="DataGridEnimals"
-                    IsSynchronizedWithCurrentItem="True"
-                    SelectionMode="Single" 
-                    AutoGenerateColumns="False" 
-                    CanUserAddRows="False"
-                    IsReadOnly="False"
-                    FontSize="20">
+                    <DataGrid   ItemsSource="{Binding AllAnimals}"
+                        IsSynchronizedWithCurrentItem="True"
+                        SelectionMode="Single" 
+                        AutoGenerateColumns="False" 
+                        CanUserAddRows="False"
+                        IsReadOnly="False"
+                        FontSize="20">
 
                         <DataGrid.Columns>
 
@@ -75,13 +83,13 @@
             <TabItem Header="Вид">
 
                 <Grid>
-                    <DataGrid x:Name="DataGridSpecies"
-                    IsSynchronizedWithCurrentItem="True"
-                    SelectionMode="Single" 
-                    AutoGenerateColumns="False" 
-                    CanUserAddRows="False"
-                    IsReadOnly="False"
-                    FontSize="20">
+                    <DataGrid ItemsSource="{Binding AllAnimalSpecies}"
+                        IsSynchronizedWithCurrentItem="True"
+                        SelectionMode="Single" 
+                        AutoGenerateColumns="False" 
+                        CanUserAddRows="False"
+                        IsReadOnly="False"
+                        FontSize="20">
 
                         <DataGrid.Columns>
 
@@ -108,13 +116,13 @@
             </TabItem>
             <TabItem Header="Класс">
                 <Grid>
-                    <DataGrid x:Name="DataGridClass"
-                    IsSynchronizedWithCurrentItem="True"
-                    SelectionMode="Single" 
-                    AutoGenerateColumns="False" 
-                    CanUserAddRows="False"
-                    IsReadOnly="False"
-                    FontSize="20">
+                    <DataGrid ItemsSource="{Binding AllAnimalClasses}"
+                        IsSynchronizedWithCurrentItem="True"
+                        SelectionMode="Single" 
+                        AutoGenerateColumns="False" 
+                        CanUserAddRows="False"
+                        IsReadOnly="False"
+                        FontSize="20">
 
                         <DataGrid.Columns>
 

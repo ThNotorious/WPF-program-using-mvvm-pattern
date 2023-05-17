@@ -1,5 +1,4 @@
 ﻿using Homework_18_Patterns.Data;
-using MaterialDesignThemes.Wpf;
 using System.Collections.Generic;
 using System.Linq;
 

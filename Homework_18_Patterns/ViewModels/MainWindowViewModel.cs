@@ -1,5 +1,7 @@
 ﻿using Homework_18_Patterns.Infrastructure.Commands;
+using Homework_18_Patterns.Models;
 using Homework_18_Patterns.ViewModels.Base;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
 
@@ -62,9 +64,43 @@ namespace Homework_18_Patterns.ViewModels
         {
             #region  Команды 
             
-            CloseApplicationCommand = new LambdaCommand(CanCloseApplicationCommandExecute, OnCloseApplicationCommandExecuted);
+            CloseApplicationCommand = new RelayCommand(CanCloseApplicationCommandExecute, OnCloseApplicationCommandExecuted);
 
             #endregion
         }
+
+        #region Получение данных
+
+        /// <summary>
+        /// Получить все классы
+        /// </summary>
+        private List<AnimalClass> allAnimalClasses = DataAnimal.GetAllClasses();
+        public List<AnimalClass> AllAnimalClasses
+        {
+            get => allAnimalClasses;
+            set => Set(ref allAnimalClasses, value);
+        }
+
+        /// <summary>
+        /// Получить все виды
+        /// </summary>
+        private List<AnimalSpecies> allAnimalSpecies = DataAnimal.GetAllSpecies();
+        public List<AnimalSpecies> AllAnimalSpecies
+        {
+            get => allAnimalSpecies;
+            set => Set(ref allAnimalSpecies, value);
+        }
+
+        /// <summary>
+        /// Получить все виды
+        /// </summary>
+        private List<Animal> allAnimals = DataAnimal.GetAllAnimals();
+        public List<Animal> AllAnimals
+        {
+            get => allAnimals;
+            set => Set(ref allAnimals, value);
+        }
+
+        #endregion
     }
 }
