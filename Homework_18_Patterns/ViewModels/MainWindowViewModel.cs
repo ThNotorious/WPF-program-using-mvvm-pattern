@@ -5,14 +5,17 @@ using Homework_18_Patterns.Views.Windows.AddData;
 using Homework_18_Patterns.Views.Windows.ChangedData;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Homework_18_Patterns.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
-        private string _title = "Анализ Статистики Homework_18_Patterns";
 
         #region Заголовок окна
+        
+        private string _title = "База данных животных";
 
         /// <summary>
         /// Заголовок окна
@@ -20,18 +23,13 @@ namespace Homework_18_Patterns.ViewModels
         public string Title
         {
             get => _title;
-            //set
-            //{
-            //    if (Equals(_title, value)) return;
-            //    _title = value;
-            //    OnPropertyChanged();
-            //}
             set => Set(ref _title, value);
         }
         #endregion
      
         #region Статус программы
-        private string  _status = "Готов!";
+       
+        private string  _status = "";
 
         /// <summary>
         /// Статус программы
@@ -41,6 +39,7 @@ namespace Homework_18_Patterns.ViewModels
             get => _status; 
             set => Set(ref _status, value); 
         }
+
         #endregion
 
 
@@ -56,7 +55,7 @@ namespace Homework_18_Patterns.ViewModels
         /// </summary>
         public RelayCommand OpenAddClassWindowCommand
         {
-            get { return _openAddClassWindowCommand ?? new RelayCommand(obj => OpenAddAnimalWindowMethod()); }
+            get { return _openAddClassWindowCommand ?? new RelayCommand(obj => OpenAddClassWindowMethod()); }
         }
 
         
@@ -93,6 +92,33 @@ namespace Homework_18_Patterns.ViewModels
         }
         #endregion
 
+        private readonly RelayCommand? _addNewClassWindowCommand;
+        public string ClassName { get; set; }
+
+        /// <summary>
+        /// Команда открытия окна добавления класса
+        /// </summary>
+        public RelayCommand AddNewClassWindowCommand
+        {
+            get
+            {
+                return _addNewClassWindowCommand ?? new RelayCommand(obj =>
+                {
+                    Window window = obj as Window;
+                    string result = "";
+
+                    if (ClassName == null || ClassName.Replace(" ", "").Length == 0)
+                    {
+                        SetRedBlockControl(window, "NameBlock");
+                    }
+                    else
+                    {
+                        result = DataAnimal.CreateClass(ClassName);
+                    }
+                });
+            }
+        }
+
 
         #endregion
 
@@ -127,7 +153,7 @@ namespace Homework_18_Patterns.ViewModels
             get => allAnimals;
             set => Set(ref allAnimals, value);
         }
-
+       
         #endregion
 
         #region Методы открытия окон
@@ -187,5 +213,12 @@ namespace Homework_18_Patterns.ViewModels
         #endregion
 
         #endregion
+
+
+        private void SetRedBlockControl(Window window, string blockName)
+        {
+            Control block = window.FindName(blockName) as Control;
+            block.BorderBrush = Brushes.Red;
+        }
     }
 }

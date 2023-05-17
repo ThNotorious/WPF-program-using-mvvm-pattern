@@ -6,10 +6,8 @@ namespace Homework_18_Patterns.ViewModels.Base
 {
     internal abstract class ViewModel : INotifyPropertyChanged, IDisposable
     {
-
         public event PropertyChangedEventHandler? PropertyChanged;
 
-       
         protected virtual void OnPropertyChanged([CallerMemberName] string? PropertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));

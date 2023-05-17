@@ -123,10 +123,10 @@
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Header="Название класса"
-                                    Binding="{Binding SecondName}"/>
+                                    Binding="{Binding Path=Name}"/>
                             
                             <DataGridTextColumn Header="Количество животных" 
-                                    Binding="{Binding PhoneNumber}"/>
+                                    />
 
                         </DataGrid.Columns>
                         <DataGrid.ContextMenu>

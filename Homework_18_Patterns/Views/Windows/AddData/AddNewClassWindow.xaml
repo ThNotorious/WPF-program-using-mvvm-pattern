@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Homework_18_Patterns.Views.Windows.AddData"
         mc:Ignorable="d"
-        Title="AddNewClassWindow" Height="300" Width="300">
+        Title="Добавление класса" Height="300" Width="300"
+        Name="AddNewClassWnd">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -18,9 +19,13 @@
                     VerticalAlignment="Center"
                     Width="200">
             <TextBlock Text="Название класса"/>
-            <TextBox Text=""/>
+            <TextBox 
+                Name="NameBlock"
+                Text="{Binding ClassName}"/>
         </StackPanel>
         <Button Grid.Row="1" 
-                Content="Добавить класс"/>
+                Content="Добавить класс"
+                Command="{Binding AddNewClassWindowCommand}"
+                CommandParameter="{Binding ElementName=AddNewClassWnd}"/>
     </Grid>
 </Window>
