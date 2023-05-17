@@ -24,7 +24,7 @@ namespace Homework_18_Patterns.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Species",
+                name: "AnimalSpecieses",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -34,9 +34,9 @@ namespace Homework_18_Patterns.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Species", x => x.Id);
+                    table.PrimaryKey("PK_AnimalSpecieses", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Species_AnimalClasses_ClassId",
+                        name: "FK_AnimalSpecieses_AnimalClasses_ClassId",
                         column: x => x.ClassId,
                         principalTable: "AnimalClasses",
                         principalColumn: "Id",
@@ -51,7 +51,7 @@ namespace Homework_18_Patterns.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Color = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Age = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SpeciesId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -59,9 +59,9 @@ namespace Homework_18_Patterns.Migrations
                 {
                     table.PrimaryKey("PK_Animals", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Animals_Species_SpeciesId",
+                        name: "FK_Animals_AnimalSpecieses_SpeciesId",
                         column: x => x.SpeciesId,
-                        principalTable: "Species",
+                        principalTable: "AnimalSpecieses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -72,8 +72,8 @@ namespace Homework_18_Patterns.Migrations
                 column: "SpeciesId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Species_ClassId",
-                table: "Species",
+                name: "IX_AnimalSpecieses_ClassId",
+                table: "AnimalSpecieses",
                 column: "ClassId");
         }
 
@@ -84,7 +84,7 @@ namespace Homework_18_Patterns.Migrations
                 name: "Animals");
 
             migrationBuilder.DropTable(
-                name: "Species");
+                name: "AnimalSpecieses");
 
             migrationBuilder.DropTable(
                 name: "AnimalClasses");

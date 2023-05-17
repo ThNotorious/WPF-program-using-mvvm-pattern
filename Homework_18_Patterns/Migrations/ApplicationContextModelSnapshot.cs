@@ -29,9 +29,8 @@ namespace Homework_18_Patterns.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Age")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
 
                     b.Property<string>("Color")
                         .IsRequired()
@@ -91,7 +90,7 @@ namespace Homework_18_Patterns.Migrations
 
                     b.HasIndex("ClassId");
 
-                    b.ToTable("Species");
+                    b.ToTable("AnimalSpecieses");
                 });
 
             modelBuilder.Entity("Homework_18_Patterns.Models.Animal", b =>

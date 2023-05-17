@@ -29,7 +29,7 @@ namespace Homework_18_Patterns.Models
         {
             using (ApplicationContext db = new ApplicationContext())
             {
-                var result = db.AnimalSpecies.ToList();
+                var result = db.AnimalSpecieses.ToList();
                 return result;
             }
         } 
@@ -85,11 +85,11 @@ namespace Homework_18_Patterns.Models
             using (ApplicationContext db = new ApplicationContext())
             {
                 //проверяем существует ли вид
-                bool checkIsExist = db.AnimalSpecies.Any(c => c.Name == name);
+                bool checkIsExist = db.AnimalSpecieses.Any(c => c.Name == name);
                 if (!checkIsExist)
                 {
                     AnimalSpecies animalSpecies = new AnimalSpecies() { Name = name, ClassId = animalClass.Id };
-                    db.AnimalSpecies.Add(animalSpecies);
+                    db.AnimalSpecieses.Add(animalSpecies);
                     db.SaveChanges();
                     result = "Выполнено!";
                 }
@@ -165,7 +165,7 @@ namespace Homework_18_Patterns.Models
             string result = "Такого вида не существует в базе";
             using (ApplicationContext db = new())
             {
-                db.AnimalSpecies.Remove(animalSpecies);
+                db.AnimalSpecieses.Remove(animalSpecies);
                 db.SaveChanges();
                 result = $"Выполнено! Вид {animalSpecies.Name} удален из базы!";
             }

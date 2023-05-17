@@ -6,7 +6,7 @@ namespace Homework_18_Patterns.Data
     internal class ApplicationContext : DbContext
     {
         public DbSet<Animal> Animals { get; set; }  
-        public DbSet<AnimalSpecies> AnimalSpecies { get; set; }  
+        public DbSet<AnimalSpecies> AnimalSpecieses { get; set; }  
         public DbSet<AnimalClass> AnimalClasses { get; set; }
 
         public ApplicationContext()

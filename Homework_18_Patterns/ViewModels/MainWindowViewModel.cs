@@ -1,9 +1,10 @@
 ﻿using Homework_18_Patterns.Infrastructure.Commands;
 using Homework_18_Patterns.Models;
 using Homework_18_Patterns.ViewModels.Base;
+using Homework_18_Patterns.Views.Windows.AddData;
+using Homework_18_Patterns.Views.Windows.ChangedData;
 using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Input;
 
 namespace Homework_18_Patterns.ViewModels
 {
@@ -28,7 +29,7 @@ namespace Homework_18_Patterns.ViewModels
             set => Set(ref _title, value);
         }
         #endregion
-
+     
         #region Статус программы
         private string  _status = "Готов!";
 
@@ -42,32 +43,58 @@ namespace Homework_18_Patterns.ViewModels
         }
         #endregion
 
+
+
         #region  Команды 
 
-        #region  CloseApplicationCommand
+        #region Команды открытия окон
 
-        public ICommand CloseApplicationCommand { get; }
-
-        private bool OnCloseApplicationCommandExecuted(object p) => true;
-
-        private void CanCloseApplicationCommandExecute(object p)
+        private readonly RelayCommand? _openAddClassWindowCommand;
+       
+        /// <summary>
+        /// Команда открытия окна добавления класса
+        /// </summary>
+        public RelayCommand OpenAddClassWindowCommand
         {
-            Application.Current.Shutdown();
+            get { return _openAddClassWindowCommand ?? new RelayCommand(obj => OpenAddAnimalWindowMethod()); }
         }
 
-        #endregion
         
+        private readonly RelayCommand? _openAddSpeciesWindowCommand;
+
+        /// <summary>
+        /// Команда открытия окна добавления класса
+        /// </summary>
+        public RelayCommand OpenAddSpeciesWindowCommand
+        {
+            get { return _openAddSpeciesWindowCommand ?? new RelayCommand(obj => OpenAddSpeciesWindowMethod()); }
+        }
+
+      
+        private readonly RelayCommand? _openAddAnimalWindowCommand;
+
+        /// <summary>
+        /// Команда открытия окна добавления животного
+        /// </summary>
+        public RelayCommand OpenAddAnimalWindowCommand
+        {
+            get { return _openAddAnimalWindowCommand ?? new RelayCommand(obj => OpenAddAnimalWindowMethod()); }
+        }
+
+
+        private readonly RelayCommand? _openChangedAnimalWindowCommand;
+
+        /// <summary>
+        /// Команда открытия окна изменения животного
+        /// </summary>
+        public RelayCommand OpenChangedAnimalWindowCommand
+        {
+            get { return _openChangedAnimalWindowCommand ?? new RelayCommand(obj => OpenChangedAnimalWindowMethod()); }
+        }
         #endregion
 
 
-        public MainWindowViewModel()
-        {
-            #region  Команды 
-            
-            CloseApplicationCommand = new RelayCommand(CanCloseApplicationCommandExecute, OnCloseApplicationCommandExecuted);
-
-            #endregion
-        }
+        #endregion
 
         #region Получение данных
 
@@ -84,11 +111,11 @@ namespace Homework_18_Patterns.ViewModels
         /// <summary>
         /// Получить все виды
         /// </summary>
-        private List<AnimalSpecies> allAnimalSpecies = DataAnimal.GetAllSpecies();
-        public List<AnimalSpecies> AllAnimalSpecies
+        private List<AnimalSpecies> allAnimalSpecieses = DataAnimal.GetAllSpecies();
+        public List<AnimalSpecies> AllAnimalSpecieses
         {
-            get => allAnimalSpecies;
-            set => Set(ref allAnimalSpecies, value);
+            get => allAnimalSpecieses;
+            set => Set(ref allAnimalSpecieses, value);
         }
 
         /// <summary>
@@ -100,6 +127,64 @@ namespace Homework_18_Patterns.ViewModels
             get => allAnimals;
             set => Set(ref allAnimals, value);
         }
+
+        #endregion
+
+        #region Методы открытия окон
+
+        /// <summary>
+        /// Метод открытия окна
+        /// </summary>
+        private void SetCenterPositionAndOpen(Window window)
+        {
+            window.Owner = Application.Current.MainWindow;
+            window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            window.ShowDialog();
+        }
+
+        #region Окна добавления
+
+        /// <summary>
+        /// Окно добавления класса
+        /// </summary>
+        private void OpenAddClassWindowMethod()
+        {
+            AddNewClassWindow addNewClassWindow = new AddNewClassWindow();
+            SetCenterPositionAndOpen(addNewClassWindow);
+        } 
+        
+        /// <summary>
+        /// Окно добавления вида
+        /// </summary>
+        private void OpenAddSpeciesWindowMethod()
+        {
+            AddNewSpeciesWindow addNewSpeciesWindow = new AddNewSpeciesWindow();
+            SetCenterPositionAndOpen(addNewSpeciesWindow);
+        } 
+        
+        /// <summary>
+        /// Окно добавления животного
+        /// </summary>
+        private void OpenAddAnimalWindowMethod()
+        {
+            AddNewEnimalWindow addNewEnimalWindow = new AddNewEnimalWindow();
+            SetCenterPositionAndOpen(addNewEnimalWindow);
+        }
+
+        #endregion
+       
+        #region Окна редактирования
+        
+        /// <summary>
+        /// Окно редактирования животного
+        /// </summary>
+        private void OpenChangedAnimalWindowMethod()
+        {
+            ChangedEnimalWindow changedEnimalWindow = new ChangedEnimalWindow();
+            SetCenterPositionAndOpen(changedEnimalWindow);
+        }
+
+        #endregion
 
         #endregion
     }
