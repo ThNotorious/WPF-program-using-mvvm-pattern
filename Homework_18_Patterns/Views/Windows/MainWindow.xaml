@@ -3,10 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-        xmlns:vm="clr-namespace:Homework_18_Patterns.ViewModels"
         Title="{Binding Title}"
-        Height="450" Width="800">
-    
+        xmlns:vm="clr-namespace:Homework_18_Patterns.ViewModels"
+        Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
@@ -29,40 +33,38 @@
             <StatusBarItem>
                 <TextBlock Text="{Binding Status}"/>
             </StatusBarItem> 
-            <StatusBarItem>
-                <ProgressBar Width="120" Height="14" Value="30"/>
-            </StatusBarItem>
         </StatusBar>
         <TabControl>
             <TabItem Header="Животные">
                 <Grid>
-                    <DataGrid   ItemsSource="{Binding AllAnimals}"
+                    <DataGrid Name="AllAnimalsDG"
+                        ItemsSource="{Binding AllAnimals}"
                         IsSynchronizedWithCurrentItem="True"
                         SelectionMode="Single" 
                         AutoGenerateColumns="False" 
                         CanUserAddRows="False"
-                        IsReadOnly="False"
-                        FontSize="20">
+                        IsReadOnly="True"
+                        FontSize="13">
 
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Header="Кличка"
-                                    Binding="{Binding SecondName}"/>
+                                    Binding="{Binding Name}"/>
 
                             <DataGridTextColumn Header="Окрас" 
-                                    Binding="{Binding FirstName}"/>
+                                    Binding="{Binding Color}"/>
 
                             <DataGridTextColumn Header="Возраст" 
-                                    Binding="{Binding MiddleName}"/>
+                                    Binding="{Binding Age}"/>
 
                             <DataGridTextColumn Header="Пол" 
-                                    Binding="{Binding PhoneNumber}"/>
+                                    Binding="{Binding Gender}"/>
                             
                             <DataGridTextColumn Header="Вид" 
-                                    Binding="{Binding PhoneNumber}"/> 
+                                    Binding="{Binding Species}"/> 
                             
                             <DataGridTextColumn Header="Класс" 
-                                    Binding="{Binding PhoneNumber}"/>
+                                    Binding="{Binding Class}"/>
 
                         </DataGrid.Columns>
                         <DataGrid.ContextMenu>
@@ -84,8 +86,8 @@
                         SelectionMode="Single" 
                         AutoGenerateColumns="False" 
                         CanUserAddRows="False"
-                        IsReadOnly="False"
-                        FontSize="20">
+                        IsReadOnly="True"
+                        FontSize="13">
 
                         <DataGrid.Columns>
 
@@ -117,8 +119,8 @@
                         SelectionMode="Single" 
                         AutoGenerateColumns="False" 
                         CanUserAddRows="False"
-                        IsReadOnly="False"
-                        FontSize="20">
+                        IsReadOnly="True"
+                        FontSize="13">
 
                         <DataGrid.Columns>
 

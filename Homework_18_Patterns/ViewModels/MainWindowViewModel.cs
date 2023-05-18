@@ -1,4 +1,5 @@
-﻿using Homework_18_Patterns.Infrastructure.Commands;
+﻿using Homework_18_Patterns.Data;
+using Homework_18_Patterns.Infrastructure.Commands;
 using Homework_18_Patterns.Models;
 using Homework_18_Patterns.ViewModels.Base;
 using Homework_18_Patterns.Views.Windows.AddData;
@@ -12,7 +13,6 @@ namespace Homework_18_Patterns.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
-
         #region Заголовок окна
         
         private string _title = "База данных животных";
@@ -23,21 +23,35 @@ namespace Homework_18_Patterns.ViewModels
         public string Title
         {
             get => _title;
-            set => Set(ref _title, value);
+            set
+            {
+                if (_title != value)
+                {
+                    _title = value;
+                    OnPropertyChanged(nameof(Title));
+                }
+            }
         }
         #endregion
      
         #region Статус программы
        
-        private string  _status = "";
+        private string  _status = "11111";
 
         /// <summary>
         /// Статус программы
         /// </summary>
         public string Status
         { 
-            get => _status; 
-            set => Set(ref _status, value); 
+            get => _status;
+            set
+            {
+                if (_status != value)
+                {
+                    _status = value;
+                    OnPropertyChanged(nameof(Status));
+                }
+            }
         }
 
         #endregion
@@ -93,7 +107,7 @@ namespace Homework_18_Patterns.ViewModels
         #endregion
 
         private readonly RelayCommand? _addNewClassWindowCommand;
-        public string ClassName { get; set; }
+        public string? ClassName { get; set; }
 
         /// <summary>
         /// Команда открытия окна добавления класса
@@ -104,8 +118,7 @@ namespace Homework_18_Patterns.ViewModels
             {
                 return _addNewClassWindowCommand ?? new RelayCommand(obj =>
                 {
-                    Window window = obj as Window;
-                    string result = "";
+                    Window? window = obj as Window;
 
                     if (ClassName == null || ClassName.Replace(" ", "").Length == 0)
                     {
@@ -113,7 +126,8 @@ namespace Homework_18_Patterns.ViewModels
                     }
                     else
                     {
-                        result = DataAnimal.CreateClass(ClassName);
+                        ShowMessageToUser(DataAnimal.CreateClass(ClassName));
+                        window.Close();
                     }
                 });
             }
@@ -127,31 +141,52 @@ namespace Homework_18_Patterns.ViewModels
         /// <summary>
         /// Получить все классы
         /// </summary>
-        private List<AnimalClass> allAnimalClasses = DataAnimal.GetAllClasses();
+        private List<AnimalClass> _allAnimalClasses = DataAnimal.GetAllClasses();
         public List<AnimalClass> AllAnimalClasses
         {
-            get => allAnimalClasses;
-            set => Set(ref allAnimalClasses, value);
+            get => _allAnimalClasses;
+            set
+            {
+                if (_allAnimalClasses != value)
+                {
+                    _allAnimalClasses = value;
+                    OnPropertyChanged(nameof(AllAnimalClasses));
+                }
+            }
         }
 
         /// <summary>
         /// Получить все виды
         /// </summary>
-        private List<AnimalSpecies> allAnimalSpecieses = DataAnimal.GetAllSpecies();
+        private List<AnimalSpecies> _allAnimalSpecieses = DataAnimal.GetAllSpecies();
         public List<AnimalSpecies> AllAnimalSpecieses
         {
-            get => allAnimalSpecieses;
-            set => Set(ref allAnimalSpecieses, value);
+            get => _allAnimalSpecieses;
+            set
+            {
+                if (_allAnimalSpecieses != value)
+                {
+                    _allAnimalSpecieses = value;
+                    OnPropertyChanged(nameof(AllAnimalSpecieses));
+                }
+            }
         }
 
         /// <summary>
         /// Получить все виды
         /// </summary>
-        private List<Animal> allAnimals = DataAnimal.GetAllAnimals();
+        private List<Animal> _allAnimals = DataAnimal.GetAllAnimals();
         public List<Animal> AllAnimals
         {
-            get => allAnimals;
-            set => Set(ref allAnimals, value);
+            get => _allAnimals;
+            set
+            {
+                if (_allAnimals != value)
+                {
+                    _allAnimals = value;
+                    OnPropertyChanged(nameof(AllAnimals));
+                }
+            }
         }
        
         #endregion
@@ -214,11 +249,26 @@ namespace Homework_18_Patterns.ViewModels
 
         #endregion
 
-
+        /// <summary>
+        /// Метод окрашивания ячейки ввода в красный
+        /// </summary>
+        /// <param name="window"></param>
+        /// <param name="blockName"></param>
         private void SetRedBlockControl(Window window, string blockName)
         {
-            Control block = window.FindName(blockName) as Control;
+            Control? block = window.FindName(blockName) as Control;
             block.BorderBrush = Brushes.Red;
+        }
+
+        private void ShowMessageToUser(string message)
+        {
+           MessageBox.Show(message, "Уведомление", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            UpdateBaseInView();
+        }
+
+        private void UpdateBaseInView()
+        {
+            _allAnimalClasses = DataAnimal.GetAllClasses();
         }
     }
 }

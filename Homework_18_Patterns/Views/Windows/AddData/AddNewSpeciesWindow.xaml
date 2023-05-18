@@ -4,8 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homework_18_Patterns.Views.Windows.AddData"
+        xmlns:vm="clr-namespace:Homework_18_Patterns.ViewModels"
         mc:Ignorable="d"
-        Title="AddNewSpeciesWindow" Height="300" Width="300">
+        Title="Добавление вида" Height="200" Width="300"
+        Name="AddNewSpeciesWnd">
+    
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

@@ -1,5 +1,4 @@
-﻿using Homework_18_Patterns.ViewModels;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Homework_18_Patterns
 {
@@ -8,7 +7,6 @@ namespace Homework_18_Patterns
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
         }
     }
 }
