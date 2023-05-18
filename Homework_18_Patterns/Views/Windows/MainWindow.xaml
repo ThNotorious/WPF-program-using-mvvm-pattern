@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-        Title="{Binding Title}"
-        xmlns:vm="clr-namespace:Homework_18_Patterns.ViewModels"
+        xmlns:vm="clr-namespace:Homework_18_Patterns.ViewModels.Commands"
+        Title="База данных животных"
         Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Window.DataContext>
-        <vm:MainWindowViewModel/>
+        <vm:MainWindowCommandViewModel/>
     </Window.DataContext>
 
     <DockPanel>

@@ -8,7 +8,7 @@ namespace Homework_18_Patterns.Views.Windows.AddData
         public AddNewSpeciesWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
+            DataContext = new MainMethods();
         }
     }
 }

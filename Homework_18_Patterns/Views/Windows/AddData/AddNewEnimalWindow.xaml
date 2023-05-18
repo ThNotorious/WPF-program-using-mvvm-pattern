@@ -4,12 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homework_18_Patterns.Views.Windows.AddData"
-        xmlns:vm="clr-namespace:Homework_18_Patterns.ViewModels"
+        xmlns:vm="clr-namespace:Homework_18_Patterns.ViewModels.Commands"
         mc:Ignorable="d"
         Title="Добавление животного" Height="300" Width="300"
         Name="AddNewAnimalWnd">
     <Window.DataContext>
-        <vm:MainWindowViewModel/>
+        <vm:AddDataWindowCommands/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
