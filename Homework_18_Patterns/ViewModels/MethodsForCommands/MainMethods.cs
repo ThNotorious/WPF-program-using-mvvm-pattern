@@ -39,5 +39,12 @@ namespace Homework_18_Patterns.ViewModels
         {
            MessageBox.Show(message, "Уведомление", MessageBoxButton.OK, MessageBoxImage.Asterisk);
         }
+
+
+        internal static void UpdateMainWindowView()
+        {
+            MainWindow window = new();
+            window.InitializeComponent();
+        }
     }
 }
