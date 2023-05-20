@@ -1,1 +1,1 @@
-# Homework_18_Patterns
+WPF program using mvvm pattern
