@@ -2,6 +2,8 @@
 using Homework_18_Patterns.Models;
 using Homework_18_Patterns.ViewModels.Base;
 using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Homework_18_Patterns.ViewModels.Commands
 {
@@ -110,6 +112,71 @@ namespace Homework_18_Patterns.ViewModels.Commands
                 }
             }
         }
+
+        #endregion
+
+        #region Команда удаления позиции
+
+        #region Свойства для удаления позиции
+
+        /// <summary>
+        /// Получение текущей вкладки
+        /// </summary>
+        public TabItem SelectedTabItem { get; set; }
+        
+        /// <summary>
+        /// Текущее выбранное животное
+        /// </summary>
+        public Animal SelectedAnimal { get; set; }
+
+        /// <summary>
+        /// Текущий выбранный вид
+        /// </summary>
+        public Animal SelectedSpecies { get; set; }
+
+        /// <summary>
+        /// Текущий выбранный класс
+        /// </summary>
+        public Animal SelectedClass { get; set; }
+
+        #endregion
+
+        #region Команда удаления позиции
+
+        private readonly RelayCommand? _deleteItem;
+
+        /// <summary>
+        /// Команда удаления позиции
+        /// </summary>
+        public RelayCommand DeleteItem
+        {
+            get
+            {
+                return _deleteItem ?? new RelayCommand(obj =>
+                {
+                    string resultStr = "Ничего не выбрано!";
+                    
+                    if(SelectedTabItem.Name == "AnimalsTab" && SelectedAnimal != null)
+                    {
+                        resultStr = DataAnimal.DeleteAnimal(SelectedAnimal);
+                    }
+                  
+                    if (SelectedTabItem.Name == "SpeciesesTab" && SelectedSpecies != null)
+                    {
+                        resultStr = DataAnimal.DeleteAnimal(SelectedSpecies);
+                    }
+                   
+                    if (SelectedTabItem.Name == "ClassesTab" && SelectedClass != null)
+                    {
+                        resultStr = DataAnimal.DeleteAnimal(SelectedClass);
+                    }
+
+                    MainMethods.ShowMessageToUser(resultStr);
+                });
+            }
+        }
+
+        #endregion
 
         #endregion
 

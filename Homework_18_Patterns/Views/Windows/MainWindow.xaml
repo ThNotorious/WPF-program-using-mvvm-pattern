@@ -10,129 +10,172 @@
     <Window.DataContext>
         <vm:MainWindowCommandViewModel/>
     </Window.DataContext>
-
+    
     <DockPanel>
+
         <Menu DockPanel.Dock="Top">
+
             <MenuItem Header="Файл">
+
                 <MenuItem Header="Добавить">
-                    <MenuItem Header="Животное" Command="{Binding OpenAddAnimalWindowCommand}"/>
-                    <MenuItem Header="Вид" Command="{Binding OpenAddSpeciesWindowCommand}"/>
-                    <MenuItem Header="Класс" Command="{Binding OpenAddClassWindowCommand}"/>
+
+                    <MenuItem Header="Животное"
+                              Command="{Binding OpenAddAnimalWindowCommand}"/>
+
+                    <MenuItem Header="Вид" 
+                              Command="{Binding OpenAddSpeciesWindowCommand}"/>
+
+                    <MenuItem Header="Класс" 
+                              Command="{Binding OpenAddClassWindowCommand}"/>
                 </MenuItem>
+
                 <MenuItem Header="Сохранить как">
                     <MenuItem Header="Excel"/>
                     <MenuItem Header="PDF"/>
                     <MenuItem Header="Текстовый документ"/>
+
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Помощь">
                 <MenuItem Header="О программе"/>
             </MenuItem>
         </Menu>
-        <StatusBar DockPanel.Dock="Bottom">
-            <StatusBarItem>
-                <TextBlock Text="{Binding Status}"/>
-            </StatusBarItem> 
-        </StatusBar>
-        <TabControl>
-            <TabItem Header="Животные">
-                <Grid>
-                    <DataGrid Name="AllAnimalsDG"
-                        ItemsSource="{Binding AllAnimals}"
-                        IsSynchronizedWithCurrentItem="True"
-                        SelectionMode="Single" 
-                        AutoGenerateColumns="False" 
-                        CanUserAddRows="False"
-                        IsReadOnly="True"
-                        FontSize="13">
 
-                        <DataGrid.Columns>
+        <TabControl SelectedItem="{Binding SelectedTabItem}">
 
-                            <DataGridTextColumn Header="Кличка"
-                                    Binding="{Binding Name}"/>
+            <TabItem Name="AnimalsTab"
+                     Header="Животные">
 
-                            <DataGridTextColumn Header="Окрас" 
-                                    Binding="{Binding Color}"/>
+                <TabItem.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Удалить"
+                                  Command="{Binding DeleteItem}"/>
 
-                            <DataGridTextColumn Header="Возраст" 
-                                    Binding="{Binding Age}"/>
-
-                            <DataGridTextColumn Header="Пол" 
-                                    Binding="{Binding Gender}"/>
-                            
-                            <DataGridTextColumn Header="Вид" 
-                                    Binding="{Binding AnimalSpecies.Name}"/> 
-                            
-                        </DataGrid.Columns>
-                        <DataGrid.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="Удалить"/>
-                                <MenuItem Header="Изменить данные"/>
-                            </ContextMenu>
-                        </DataGrid.ContextMenu>
-                    </DataGrid>
-                   
-                </Grid>
-            </TabItem>
-            <TabItem Header="Вид">
+                        <MenuItem Header="Изменить данные"/>
+                    </ContextMenu>
+                </TabItem.ContextMenu>
 
                 <Grid>
-                    <DataGrid ItemsSource="{Binding AllAnimalSpecieses}"
-                        IsSynchronizedWithCurrentItem="True"
-                        SelectionMode="Single" 
-                        AutoGenerateColumns="False" 
-                        CanUserAddRows="False"
-                        IsReadOnly="True"
-                        FontSize="13">
+                    <ListView Name="AllAnimalsDG"
+                              SelectedItem="{Binding SelectedAnimal}"
+                              ItemsSource="{Binding AllAnimals}"
+                              IsSynchronizedWithCurrentItem="True"
+                              SelectionMode="Single" 
+                              FontSize="13">
 
-                        <DataGrid.Columns>
+                        <ListView.View>
+                            <GridView>
 
-                            <DataGridTextColumn Header="Название вида"
-                                    Binding="{Binding Name}"/>
-                            
-                            <DataGridTextColumn Header="Класс" 
-                                    Binding="{Binding SpeciesClass.Name}"/>
- 
-                            <DataGridTextColumn Header="Количество животных" 
-                                    Binding="{Binding SpeciesAnimals.Count}"/>
+                                <GridViewColumn Header="Кличка"
+                                                DisplayMemberBinding="{Binding Name}"/>
 
-                        </DataGrid.Columns>
-                        <DataGrid.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="Удалить"/>
-                            </ContextMenu>
-                        </DataGrid.ContextMenu>
-                    </DataGrid>
+                                <GridViewColumn Header="Окрас" 
+                                                DisplayMemberBinding="{Binding Color}"/>
+
+                                <GridViewColumn Header="Возраст" 
+                                                DisplayMemberBinding="{Binding Age}"/>
+
+                                <GridViewColumn Header="Пол" 
+                                                DisplayMemberBinding="{Binding Gender}"/>
+
+                                <GridViewColumn Header="Вид" 
+                                                DisplayMemberBinding="{Binding AnimalSpecies.Name}"/>
+
+                            </GridView>
+
+                        </ListView.View>
+
+                    </ListView>
+
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Класс">
+
+            <TabItem Name="SpeciesesTab"
+                     Header="Вид">
+
+                <TabItem.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Удалить"
+                                  Command="{Binding DeleteItem}"/>
+                    </ContextMenu>
+                </TabItem.ContextMenu>
+
                 <Grid>
-                    <DataGrid ItemsSource="{Binding AllAnimalClasses}"
-                        IsSynchronizedWithCurrentItem="True"
-                        SelectionMode="Single" 
-                        AutoGenerateColumns="False" 
-                        CanUserAddRows="False"
-                        IsReadOnly="True"
-                        FontSize="13">
+                    <ListView  Name="AllSpeciesesDG"
+                               ItemsSource="{Binding AllAnimalSpecieses}"
+                               SelectedItem="{Binding SelectedSpecies}"
+                               IsSynchronizedWithCurrentItem="True"
+                               SelectionMode="Single" 
+                               FontSize="13">
 
-                        <DataGrid.Columns>
+                        <ListView.View>
+                            <GridView>
 
-                            <DataGridTextColumn Header="Название класса"
-                                    Binding="{Binding Name}"/>
-                            
-                            <DataGridTextColumn Header="Количество видов" 
-                                    Binding="{Binding ClassSpecies.Count}"/>
+                                <GridViewColumn Header="Название вида"
+                                                DisplayMemberBinding="{Binding Name}"/>
 
-                        </DataGrid.Columns>
-                        <DataGrid.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="Удалить"/>
-                            </ContextMenu>
-                        </DataGrid.ContextMenu>
-                    </DataGrid>
+                                <GridViewColumn Header="Класс" 
+                                                DisplayMemberBinding="{Binding SpeciesClass.Name}"/>
+
+                                <GridViewColumn Header="Количество животных" 
+                                                DisplayMemberBinding="{Binding SpeciesAnimals.Count}"/>
+
+                            </GridView>
+
+                        </ListView.View>
+
+                    </ListView>
+
                 </Grid>
+
             </TabItem>
+
+            <TabItem Name="ClassesTab"
+                     Header="Класс">
+
+                <TabItem.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Удалить"
+                                  Command="{Binding DeleteItem}"/>
+                    </ContextMenu>
+                </TabItem.ContextMenu>
+
+                <Grid>
+
+                    <ListView Name="AllClassesDG"
+                             
+                          ItemsSource="{Binding AllAnimalClasses}"
+                          SelectedItem="{Binding SelectedClass}"
+                          IsSynchronizedWithCurrentItem="True"
+                          SelectionMode="Single" 
+                          FontSize="13">
+
+
+                        <ListView.View>
+
+                            <GridView>
+
+
+                                <GridViewColumn Header="Название класса"
+                                            DisplayMemberBinding="{Binding Name}"/>
+
+
+                                <GridViewColumn Header="Количество видов" 
+                                            DisplayMemberBinding="{Binding ClassSpecies.Count}"/>
+
+                            </GridView>
+
+                        </ListView.View>
+
+                    </ListView>
+
+                </Grid>
+
+            </TabItem>
+
         </TabControl>
+
     </DockPanel>
+    
 </Window>

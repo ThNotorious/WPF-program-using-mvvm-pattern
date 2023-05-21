@@ -15,11 +15,11 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// </summary>
         public string? ClassName { get; set; }
 
-        private readonly RelayCommand? _openAddClassWindowCommand;
-
         #endregion
 
         #region Команда создания нового класса
+       
+        private readonly RelayCommand? _openAddClassWindowCommand;
 
         /// <summary>
         /// Команда создания нового класса
@@ -61,11 +61,11 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// </summary>
         public AnimalClass SpeciesClass { get; set; }
 
-        private readonly RelayCommand? _openAddSpeciesWindowCommand;
-
         #endregion
 
         #region Команда создания нового вида
+
+        private readonly RelayCommand? _openAddSpeciesWindowCommand;
 
         /// <summary>
         /// Команда создания нового вида
@@ -126,11 +126,11 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// </summary>
         public AnimalSpecies AnimalSpecies { get; set; }
 
-        private readonly RelayCommand? _openAddAnimalWindowCommand;
-
         #endregion
 
         #region Команда создания нового животного
+        
+        private readonly RelayCommand? _openAddAnimalWindowCommand;
 
         /// <summary>
         /// Команда создания нового жиотного
