@@ -132,12 +132,12 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// <summary>
         /// Текущий выбранный вид
         /// </summary>
-        public Animal SelectedSpecies { get; set; }
+        public AnimalSpecies SelectedSpecies { get; set; }
 
         /// <summary>
         /// Текущий выбранный класс
         /// </summary>
-        public Animal SelectedClass { get; set; }
+        public AnimalClass SelectedClass { get; set; }
 
         #endregion
 
@@ -163,12 +163,12 @@ namespace Homework_18_Patterns.ViewModels.Commands
                   
                     if (SelectedTabItem.Name == "SpeciesesTab" && SelectedSpecies != null)
                     {
-                        resultStr = DataAnimal.DeleteAnimal(SelectedSpecies);
+                        resultStr = DataAnimal.DeleteSpecies(SelectedSpecies);
                     }
                    
                     if (SelectedTabItem.Name == "ClassesTab" && SelectedClass != null)
                     {
-                        resultStr = DataAnimal.DeleteAnimal(SelectedClass);
+                        resultStr = DataAnimal.DeleteClass(SelectedClass);
                     }
 
                     MainMethods.ShowMessageToUser(resultStr);
