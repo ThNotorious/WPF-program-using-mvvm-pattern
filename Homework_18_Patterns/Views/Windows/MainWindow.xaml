@@ -61,16 +61,12 @@
                                     Binding="{Binding Gender}"/>
                             
                             <DataGridTextColumn Header="Вид" 
-                                    Binding="{Binding Species}"/> 
+                                    Binding="{Binding AnimalSpecies.Name}"/> 
                             
-                            <DataGridTextColumn Header="Класс" 
-                                    Binding="{Binding Class}"/>
-
                         </DataGrid.Columns>
                         <DataGrid.ContextMenu>
                             <ContextMenu>
                                 <MenuItem Header="Удалить"/>
-                                <MenuItem Header="Оформить заказ"/>
                                 <MenuItem Header="Изменить данные"/>
                             </ContextMenu>
                         </DataGrid.ContextMenu>
@@ -81,7 +77,7 @@
             <TabItem Header="Вид">
 
                 <Grid>
-                    <DataGrid ItemsSource="{Binding AllAnimalSpecies}"
+                    <DataGrid ItemsSource="{Binding AllAnimalSpecieses}"
                         IsSynchronizedWithCurrentItem="True"
                         SelectionMode="Single" 
                         AutoGenerateColumns="False" 
@@ -92,20 +88,18 @@
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Header="Название вида"
-                                    Binding="{Binding SecondName}"/>
+                                    Binding="{Binding Name}"/>
                             
                             <DataGridTextColumn Header="Класс" 
-                                    Binding="{Binding PhoneNumber}"/>
+                                    Binding="{Binding SpeciesClass.Name}"/>
  
                             <DataGridTextColumn Header="Количество животных" 
-                                    Binding="{Binding PhoneNumber}"/>
+                                    Binding="{Binding SpeciesAnimals.Count}"/>
 
                         </DataGrid.Columns>
                         <DataGrid.ContextMenu>
                             <ContextMenu>
                                 <MenuItem Header="Удалить"/>
-                                <MenuItem Header="Оформить заказ"/>
-                                <MenuItem Header="Изменить данные"/>
                             </ContextMenu>
                         </DataGrid.ContextMenu>
                     </DataGrid>
@@ -125,17 +119,15 @@
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Header="Название класса"
-                                    Binding="{Binding Path=Name}"/>
+                                    Binding="{Binding Name}"/>
                             
-                            <DataGridTextColumn Header="Количество животных" 
-                                    />
+                            <DataGridTextColumn Header="Количество видов" 
+                                    Binding="{Binding ClassSpecies.Count}"/>
 
                         </DataGrid.Columns>
                         <DataGrid.ContextMenu>
                             <ContextMenu>
                                 <MenuItem Header="Удалить"/>
-                                <MenuItem Header="Оформить заказ"/>
-                                <MenuItem Header="Изменить данные"/>
                             </ContextMenu>
                         </DataGrid.ContextMenu>
                     </DataGrid>

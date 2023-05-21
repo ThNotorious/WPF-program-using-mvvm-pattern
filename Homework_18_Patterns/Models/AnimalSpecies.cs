@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Homework_18_Patterns.Models
 {
@@ -28,5 +29,29 @@ namespace Homework_18_Patterns.Models
         /// Id Класса
         /// </summary>
         public int ClassId { get; set; }
+
+        /// <summary>
+        /// Возврат имени класса, к которому привязан вид
+        /// </summary>
+        [NotMapped] 
+        public AnimalClass SpeciesClass 
+        {
+            get
+            {
+               return DataAnimal.GetClassById(ClassId);
+            }
+        }
+
+        /// <summary>
+        /// Возврат количества всех животных принадлежащих кокретному виду
+        /// </summary>
+        [NotMapped] 
+        public List<Animal> SpeciesAnimals
+        {
+            get
+            {
+                return DataAnimal.GetAllAnimalsBySpeciesId(Id);
+            }
+        }
     }
 }

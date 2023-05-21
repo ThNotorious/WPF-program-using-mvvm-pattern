@@ -25,12 +25,17 @@
                     VerticalAlignment="Center"
                     Width="200">
             <TextBlock Text="Название вида"/>
-            <TextBox Text=""/>
+            <TextBox  Name="NameBlock"
+                      Text="{Binding SpeciesName}"/>
 
             <TextBlock Text="Выбрать класс"/>
-            <ComboBox/>
+            <ComboBox ItemsSource="{Binding AllAnimalClasses}" 
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding SpeciesClass}"/>
         </StackPanel>
         <Button Grid.Row="1" 
+                Command="{Binding AddNewSpeciesWindowCommand}"
+                CommandParameter="{Binding ElementName=AddNewSpeciesWnd}"
                 Content="Добавить вид"/>
     </Grid>
 </Window>

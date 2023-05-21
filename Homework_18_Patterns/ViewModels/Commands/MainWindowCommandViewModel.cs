@@ -2,7 +2,6 @@
 using Homework_18_Patterns.Models;
 using Homework_18_Patterns.ViewModels.Base;
 using System.Collections.Generic;
-using System.Windows;
 
 namespace Homework_18_Patterns.ViewModels.Commands
 {
@@ -114,9 +113,6 @@ namespace Homework_18_Patterns.ViewModels.Commands
 
         #endregion
 
-
         #endregion
-
-
     }
 }

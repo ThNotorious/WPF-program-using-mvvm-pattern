@@ -1,4 +1,6 @@
-﻿namespace Homework_18_Patterns.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Homework_18_Patterns.Models
 {
     internal class Animal
     {
@@ -36,5 +38,17 @@
         /// Id вида животного
         /// </summary>
         public int SpeciesId { get; set; }
+
+        /// <summary>
+        /// Возврат имени вида, к которому привязано животное
+        /// </summary>
+        [NotMapped]
+        public AnimalSpecies AnimalSpecies
+        {
+            get
+            {
+                return DataAnimal.GetSpeciesById(SpeciesId);
+            }
+        }
     }
 }

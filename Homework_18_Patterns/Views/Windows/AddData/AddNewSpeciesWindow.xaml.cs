@@ -1,5 +1,4 @@
-﻿using Homework_18_Patterns.ViewModels;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Homework_18_Patterns.Views.Windows.AddData
 {
@@ -8,7 +7,6 @@ namespace Homework_18_Patterns.Views.Windows.AddData
         public AddNewSpeciesWindow()
         {
             InitializeComponent();
-            DataContext = new MainMethods();
         }
     }
 }

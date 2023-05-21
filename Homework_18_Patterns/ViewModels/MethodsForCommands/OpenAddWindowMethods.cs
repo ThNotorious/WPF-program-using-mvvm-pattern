@@ -29,7 +29,7 @@ namespace Homework_18_Patterns.ViewModels
         /// </summary>
         internal static void OpenAddAnimalWindowMethod()
         {
-            AddNewEnimalWindow addNewEnimalWindow = new();
+            AddNewAnimalWindow addNewEnimalWindow = new();
             SetCenterPositionAndOpen(addNewEnimalWindow);
         }
 

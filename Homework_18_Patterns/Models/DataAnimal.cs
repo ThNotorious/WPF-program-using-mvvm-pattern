@@ -14,7 +14,7 @@ namespace Homework_18_Patterns.Models
         /// <returns></returns>
         public static List<AnimalClass> GetAllClasses()
         {
-            using (ApplicationContext db = new ApplicationContext())
+            using (ApplicationContext db = new())
             {
                 var result = db.AnimalClasses.ToList();
                 return result;
@@ -27,25 +27,82 @@ namespace Homework_18_Patterns.Models
         /// <returns></returns>
         public static List<AnimalSpecies> GetAllSpecies()
         {
-            using (ApplicationContext db = new ApplicationContext())
+            using (ApplicationContext db = new())
             {
                 var result = db.AnimalSpecieses.ToList();
                 return result;
             }
-        } 
-        
+        }
+
         /// <summary>
         /// Получить всех животных
         /// </summary>
         /// <returns></returns>
         public static List<Animal> GetAllAnimals()
         {
-            using (ApplicationContext db = new ApplicationContext())
+            using (ApplicationContext db = new())
             {
                 var result = db.Animals.ToList();
                 return result;
             }
         }
+       
+        /// <summary>
+        /// Получить вид животного
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static AnimalSpecies GetSpeciesById(int id)
+        {
+            using (ApplicationContext db = new())
+            {
+                AnimalSpecies animalSpecies = db.AnimalSpecieses.FirstOrDefault(p => p.Id == id);
+                return animalSpecies;
+            }
+        }
+
+        /// <summary>
+        /// Получить класс животного
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static AnimalClass GetClassById(int id)
+        {
+            using (ApplicationContext db = new())
+            {
+                AnimalClass animalClass = db.AnimalClasses.FirstOrDefault(p => p.Id == id);
+                return animalClass;
+            }
+        }
+
+        /// <summary>
+        /// Получение всех животных в конкретном виде по Id вида
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static List<Animal> GetAllAnimalsBySpeciesId(int id)
+        {
+            using (ApplicationContext db = new())
+            {
+                List<Animal> animals = (from animal in GetAllAnimals() where animal.Id == id select animal).ToList();
+                return animals;
+            }
+        }
+
+        /// <summary>
+        /// Получение всех видов в конкретном классе по Id класса
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static List<AnimalSpecies> GetAllSpeciesesByClassId(int id)
+        {
+            using (ApplicationContext db = new())
+            {
+                List<AnimalSpecies> specieses = (from species in GetAllSpecies() where species.Id == id select species).ToList();
+                return specieses;
+            }
+        }
+
         #endregion
 
         #region Создание данных
@@ -216,5 +273,8 @@ namespace Homework_18_Patterns.Models
         }
 
         #endregion
+
     }
 }
+
+    

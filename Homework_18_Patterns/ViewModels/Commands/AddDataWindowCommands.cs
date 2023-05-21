@@ -1,11 +1,10 @@
 ﻿using Homework_18_Patterns.Infrastructure.Commands;
 using Homework_18_Patterns.Models;
-using Homework_18_Patterns.ViewModels.Base;
 using System.Windows;
 
 namespace Homework_18_Patterns.ViewModels.Commands
 {
-    internal class AddDataWindowCommands : ViewModel
+    internal class AddDataWindowCommands : MainWindowCommandViewModel
     {
         #region  Команды окон добавления данных в базу
 
@@ -60,13 +59,13 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// <summary>
         /// Свойство для привязки вида к конкретному классу
         /// </summary>
-        public AnimalClass AnimalClass { get; set; }
+        public AnimalClass SpeciesClass { get; set; }
 
         private readonly RelayCommand? _openAddSpeciesWindowCommand;
 
         #endregion
 
-        #region Команда создания нового класса
+        #region Команда создания нового вида
 
         /// <summary>
         /// Команда создания нового вида
@@ -84,9 +83,13 @@ namespace Homework_18_Patterns.ViewModels.Commands
                     {
                         MainMethods.SetRedBlockControl(window, "NameBlock");
                     }
+                    if (SpeciesClass == null)
+                    {
+                        MainMethods.ShowMessageToUser("Укажите класс!");
+                    }
                     else
                     {
-                        MainMethods.ShowMessageToUser(DataAnimal.CreateSpecies(SpeciesName, AnimalClass));
+                        MainMethods.ShowMessageToUser(DataAnimal.CreateSpecies(SpeciesName, SpeciesClass));
                         window.Close();
                     }
                 });
@@ -99,22 +102,22 @@ namespace Homework_18_Patterns.ViewModels.Commands
         #region Свойства для создания нового животного
 
         /// <summary>
-        /// Свойство привязанное к TextBox для получения клички нового Жиотного
+        /// Свойство привязанное к TextBox для получения клички нового животного
         /// </summary>
         public string? AnimalName { get; set; }
 
         /// <summary>
-        /// Свойство привязанное к TextBox для получения окраса нового Жиотного
+        /// Свойство привязанное к TextBox для получения окраса нового животного
         /// </summary>
         public string? Color { get; set; }
-    
+
         /// <summary>
-        /// Свойство привязанное к TextBox для получения возраста нового Жиотного
+        /// Свойство привязанное к TextBox для получения возраста нового животного
         /// </summary>
         public int Age { get; set; }
 
         /// <summary>
-        /// Свойство привязанное к TextBox для получения пола нового Жиотного
+        /// Свойство привязанное к TextBox для получения пола нового животного
         /// </summary>
         public string? Gender { get; set; }
 
@@ -143,6 +146,10 @@ namespace Homework_18_Patterns.ViewModels.Commands
                     if (ClassName == null || ClassName.Replace(" ", "").Length == 0)
                     {
                         MainMethods.SetRedBlockControl(window, "NameBlock");
+                    }
+                    if(AnimalSpecies == null)
+                    {
+                        MainMethods.ShowMessageToUser("Укажите вид!");
                     }
                     else
                     {
