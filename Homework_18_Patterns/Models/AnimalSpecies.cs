@@ -41,17 +41,5 @@ namespace Homework_18_Patterns.Models
                return DataAnimal.GetClassById(ClassId);
             }
         }
-
-        /// <summary>
-        /// Возврат количества всех животных принадлежащих кокретному виду
-        /// </summary>
-        [NotMapped] 
-        public List<Animal> SpeciesAnimals
-        {
-            get
-            {
-                return DataAnimal.GetAllAnimalsBySpeciesId(Id);
-            }
-        }
     }
 }

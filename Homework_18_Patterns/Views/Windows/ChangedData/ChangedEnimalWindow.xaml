@@ -4,8 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homework_18_Patterns.Views.Windows.ChangedData"
+        xmlns:vm="clr-namespace:Homework_18_Patterns.ViewModels.Commands"
         mc:Ignorable="d"
-        Title="ChangedEnimalWindow" Height="300" Width="300">
+        Title="Изменение данных животного" Height="200" Width="300"
+        Name="ChangedAnimalWnd">
+
+    <Window.DataContext>
+        <vm:ChangedDataWindowCommands/>
+    </Window.DataContext>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -18,16 +25,18 @@
                     VerticalAlignment="Center"
                     Width="200">
             <TextBlock Text="Новая кличка"/>
-            <TextBox Text=""/>
+            <TextBox Text="{Binding AnimalName}"/>
 
             <TextBlock Text="Новый окрас"/>
-            <TextBox Text=""/>
+            <TextBox Text="{Binding Color}"/>
 
             <TextBlock Text="Возраст"/>
-            <TextBox Text=""/>
+            <TextBox Text="{Binding Age}"/>
 
         </StackPanel>
         <Button Grid.Row="1" 
-                Content="Сохранить изменения"/>
+                Content="Сохранить изменения"
+                Command="{Binding ChangedAnimal}"
+                CommandParameter="{Binding ElementName=ChangedAnimalWnd}"/>
     </Grid>
 </Window>

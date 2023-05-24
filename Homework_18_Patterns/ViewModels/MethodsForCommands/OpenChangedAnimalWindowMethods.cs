@@ -11,7 +11,7 @@ namespace Homework_18_Patterns.ViewModels
         /// </summary>
         internal static void OpenChangedAnimalWindowMethod()
         {
-            ChangedEnimalWindow changedEnimalWindow = new ChangedEnimalWindow();
+            ChangedEnimalWindow changedEnimalWindow = new();
             SetCenterPositionAndOpen(changedEnimalWindow);
         }
 

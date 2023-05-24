@@ -50,5 +50,10 @@ namespace Homework_18_Patterns.Models
                 return DataAnimal.GetSpeciesById(SpeciesId);
             }
         }
+
+        public override string ToString()
+        {
+            return $"ID: {Id}\tИмя: {Name}\tОкрас: {Color}\tВозраст: {Age}\tПол: {Gender}\tВид: {AnimalSpecies.Name}";
+        }
     }
 }

@@ -30,9 +30,12 @@
                 </MenuItem>
 
                 <MenuItem Header="Сохранить как">
-                    <MenuItem Header="Excel"/>
-                    <MenuItem Header="PDF"/>
-                    <MenuItem Header="Текстовый документ"/>
+                    <MenuItem Header="Excel"
+                              Command="{Binding SaveDataToExcelButtonCommand}"/>
+                    <MenuItem Header="World"
+                              Command="{Binding SaveDataToDOCButtonCommand}"/>
+                    <MenuItem Header="TXT"
+                              Command="{Binding SaveDataToTXTButtonCommand}"/>
 
                 </MenuItem>
             </MenuItem>
@@ -51,7 +54,8 @@
                         <MenuItem Header="Удалить"
                                   Command="{Binding DeleteItem}"/>
 
-                        <MenuItem Header="Изменить данные"/>
+                        <MenuItem Header="Изменить данные"
+                                  Command="{Binding OpenChangedAnimalWindowCommand}"/>
                     </ContextMenu>
                 </TabItem.ContextMenu>
 
@@ -116,9 +120,6 @@
                                 <GridViewColumn Header="Класс" 
                                                 DisplayMemberBinding="{Binding SpeciesClass.Name}"/>
 
-                                <GridViewColumn Header="Количество животных" 
-                                                DisplayMemberBinding="{Binding SpeciesAnimals.Count}"/>
-
                             </GridView>
 
                         </ListView.View>
@@ -154,10 +155,6 @@
 
                                 <GridViewColumn Header="Название класса"
                                             DisplayMemberBinding="{Binding Name}"/>
-
-
-                                <GridViewColumn Header="Количество видов" 
-                                            DisplayMemberBinding="{Binding ClassSpecies.Count}"/>
 
                             </GridView>
 

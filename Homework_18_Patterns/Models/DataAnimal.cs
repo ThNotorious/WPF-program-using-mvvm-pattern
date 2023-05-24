@@ -255,7 +255,7 @@ namespace Homework_18_Patterns.Models
         /// </summary>
         /// <param name="animal"></param>
         /// <returns></returns>
-        public static string ChangedAnimal(Animal oldAnimal, string newName, string newColor, int newAge, AnimalSpecies animalSpecies)
+        public static string ChangedAnimal(Animal oldAnimal, string newName, string newColor, int newAge)
         {
             string result = "Такого животного не существует в базе";
             using (ApplicationContext db = new())
@@ -264,7 +264,6 @@ namespace Homework_18_Patterns.Models
                 animal.Name = newName;
                 animal.Age = newAge;
                 animal.Color = newColor;
-                animal.SpeciesId = animalSpecies.Id;
 
                 db.SaveChanges();
                 result = $"Изменения проведены";

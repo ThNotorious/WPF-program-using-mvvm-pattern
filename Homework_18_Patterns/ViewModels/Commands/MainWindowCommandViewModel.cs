@@ -1,8 +1,8 @@
 ﻿using Homework_18_Patterns.Infrastructure.Commands;
 using Homework_18_Patterns.Models;
 using Homework_18_Patterns.ViewModels.Base;
+using Homework_18_Patterns.ViewModels.MethodsForCommands;
 using System.Collections.Generic;
-using System.Windows;
 using System.Windows.Controls;
 
 namespace Homework_18_Patterns.ViewModels.Commands
@@ -47,7 +47,23 @@ namespace Homework_18_Patterns.ViewModels.Commands
 
         #endregion
 
-        #region Команды открытия окон изменения
+        #region Команды открытия окна изменения
+
+        private int _selectedIndex;
+     
+        /// <summary>
+        /// Индекс выбранной позиции
+        /// </summary>
+        public int SelectedIndex
+        {
+            get { return _selectedIndex; }
+            set
+            {
+                _selectedIndex = value;
+                OnPropertyChanged(nameof(SelectedIndex));
+            }
+        }
+
 
         private readonly RelayCommand? _openChangedAnimalWindowCommand;
 
@@ -174,6 +190,53 @@ namespace Homework_18_Patterns.ViewModels.Commands
                     MainMethods.ShowMessageToUser(resultStr);
                 });
             }
+        }
+
+        #endregion
+
+        #endregion
+
+
+        #region Команды сохранения данных в файл
+
+        #region Сохранение в DOC
+
+        private readonly RelayCommand? _saveDataToDOCButtonCommand;
+
+        /// <summary>
+        /// Команда сохранения данных в файл PDF
+        /// </summary>
+        public RelayCommand SaveDataToDOCButtonCommand
+        {
+            get { return _saveDataToDOCButtonCommand ?? new RelayCommand(obj => SaveFromDataBaseMethods.SaveDataToDOC()); }
+        }
+
+        #endregion
+
+        #region Сохранение в Excel
+
+        private readonly RelayCommand? _saveDataToExcelButtonCommand;
+
+        /// <summary>
+        /// Команда сохранения данных в файл Excel
+        /// </summary>
+        public RelayCommand SaveDataToExcelButtonCommand
+        {
+            get { return _saveDataToExcelButtonCommand ?? new RelayCommand(obj => SaveFromDataBaseMethods.SaveDataToExcel()); }
+        }
+
+        #endregion
+
+        #region Сохранение в Excel
+
+        private readonly RelayCommand? _saveDataToTXTButtonCommand;
+
+        /// <summary>
+        /// Команда сохранения данных в файл TXT
+        /// </summary>
+        public RelayCommand SaveDataToTXTButtonCommand
+        {
+            get { return _saveDataToTXTButtonCommand ?? new RelayCommand(obj => SaveFromDataBaseMethods.SaveDataToTXT()); }
         }
 
         #endregion
