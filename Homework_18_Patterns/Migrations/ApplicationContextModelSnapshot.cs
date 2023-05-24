@@ -54,7 +54,7 @@ namespace Homework_18_Patterns.Migrations
                     b.ToTable("Animals");
                 });
 
-            modelBuilder.Entity("Homework_18_Patterns.Models.SpeciesClass", b =>
+            modelBuilder.Entity("Homework_18_Patterns.Models.AnimalClass", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -106,7 +106,7 @@ namespace Homework_18_Patterns.Migrations
 
             modelBuilder.Entity("Homework_18_Patterns.Models.AnimalSpecies", b =>
                 {
-                    b.HasOne("Homework_18_Patterns.Models.SpeciesClass", "Class")
+                    b.HasOne("Homework_18_Patterns.Models.AnimalClass", "Class")
                         .WithMany("Species")
                         .HasForeignKey("ClassId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -115,7 +115,7 @@ namespace Homework_18_Patterns.Migrations
                     b.Navigation("Class");
                 });
 
-            modelBuilder.Entity("Homework_18_Patterns.Models.SpeciesClass", b =>
+            modelBuilder.Entity("Homework_18_Patterns.Models.AnimalClass", b =>
                 {
                     b.Navigation("Species");
                 });
