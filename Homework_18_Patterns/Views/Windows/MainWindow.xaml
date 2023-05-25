@@ -39,11 +39,10 @@
 
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Помощь">
-                <MenuItem Header="О программе"/>
+            <MenuItem Header="Обновить данные"
+                      Command="{Binding UpdateViewCommand}" FontWeight="Bold">
             </MenuItem>
-            <Button Content="Обновить данные"
-                    Command="{Binding UpdateViewCommand}"/>
+
         </Menu>
 
         <TabControl SelectedItem="{Binding SelectedTabItem}">

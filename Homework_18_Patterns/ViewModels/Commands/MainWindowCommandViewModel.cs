@@ -1,10 +1,8 @@
-﻿using Homework_18_Patterns.Data;
-using Homework_18_Patterns.Infrastructure.Commands;
+﻿using Homework_18_Patterns.Infrastructure.Commands;
 using Homework_18_Patterns.Models;
 using Homework_18_Patterns.ViewModels.Base;
 using Homework_18_Patterns.ViewModels.MethodsForCommands;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 
 namespace Homework_18_Patterns.ViewModels.Commands
@@ -74,11 +72,10 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// </summary>
         public RelayCommand OpenChangedAnimalWindowCommand
         {
-            get { return _openChangedAnimalWindowCommand ?? new RelayCommand(obj => OpenChangedAnimalWindowMethods.OpenChangedAnimalWindowMethod()); }
+            get { return _openChangedAnimalWindowCommand ?? new RelayCommand(obj => ChangedDataWindowCommands.OpenChangedAnimalWindowMethod(SelectedAnimal)); }
         }
         #endregion
 
-    
         #region Свойства привязки базы данных к DataGrid
 
         /// <summary>
@@ -134,9 +131,9 @@ namespace Homework_18_Patterns.ViewModels.Commands
 
         #endregion
 
-        #region Команда удаления позиции
+        #region Команды удаления/изменения позиции
 
-        #region Свойства для удаления позиции
+        #region Свойства выбора позиции
 
         /// <summary>
         /// Получение текущей вкладки
@@ -172,25 +169,33 @@ namespace Homework_18_Patterns.ViewModels.Commands
             get
             {
                 return _deleteItem ?? new RelayCommand(obj =>
-                {
-                    string resultStr = "Ничего не выбрано!";
-                    
-                    if(SelectedTabItem.Name == "AnimalsTab" && SelectedAnimal != null)
+                { 
+                    string resultStr = "Данные отсутствуют! Попробуйте обновить базу.";
+
+                    try
                     {
-                        resultStr = DataAnimal.DeleteAnimal(SelectedAnimal);
+                        if (SelectedTabItem.Name == "AnimalsTab" && SelectedAnimal != null)
+                        {
+                            resultStr = DataAnimal.DeleteAnimal(SelectedAnimal);
+                        }
+
+                        if (SelectedTabItem.Name == "SpeciesesTab" && SelectedSpecies != null)
+                        {
+                            resultStr = DataAnimal.DeleteSpecies(SelectedSpecies);
+                        }
+
+                        if (SelectedTabItem.Name == "ClassesTab" && SelectedClass != null)
+                        {
+                            resultStr = DataAnimal.DeleteClass(SelectedClass);
+                        }
+
+                        MainMethods.ShowMessageToUser(resultStr);
                     }
-                  
-                    if (SelectedTabItem.Name == "SpeciesesTab" && SelectedSpecies != null)
+                    catch 
                     {
-                        resultStr = DataAnimal.DeleteSpecies(SelectedSpecies);
-                    }
-                   
-                    if (SelectedTabItem.Name == "ClassesTab" && SelectedClass != null)
-                    {
-                        resultStr = DataAnimal.DeleteClass(SelectedClass);
+                        MainMethods.ShowMessageToUser(resultStr);
                     }
 
-                    MainMethods.ShowMessageToUser(resultStr);
                 });
             }
         }
@@ -198,7 +203,6 @@ namespace Homework_18_Patterns.ViewModels.Commands
         #endregion
 
         #endregion
-
 
         #region Команды сохранения данных в файл
 
@@ -247,6 +251,7 @@ namespace Homework_18_Patterns.ViewModels.Commands
         #endregion
 
         #region Обновление View после изменения данных
+      
         private readonly RelayCommand? _updateViewCommand;
 
         public RelayCommand UpdateViewCommand
@@ -262,10 +267,7 @@ namespace Homework_18_Patterns.ViewModels.Commands
         }
 
         #endregion
-       
-        
+      
         #endregion
-
-
     }
 }

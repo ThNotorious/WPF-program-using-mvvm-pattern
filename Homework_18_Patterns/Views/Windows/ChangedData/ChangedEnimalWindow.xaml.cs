@@ -2,9 +2,9 @@
 
 namespace Homework_18_Patterns.Views.Windows.ChangedData
 {
-    public partial class ChangedEnimalWindow : Window
+    public partial class ChangedAnimalWindow : Window
     {
-        public ChangedEnimalWindow()
+        public ChangedAnimalWindow()
         {
             InitializeComponent();
         }

@@ -1,12 +1,11 @@
 ﻿using Homework_18_Patterns.Infrastructure.Commands;
 using Homework_18_Patterns.Models;
-using System.Windows;
+using Homework_18_Patterns.Views.Windows.ChangedData;
 
 namespace Homework_18_Patterns.ViewModels.Commands
 {
     internal class ChangedDataWindowCommands : MainWindowCommandViewModel
     {
-
         #region Свойства для редактирования животного
 
         /// <summary>
@@ -24,15 +23,30 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// </summary>
         public int NewAge { get; set; }
 
+        private static Animal OldAnimal { get; set; }
+
         #endregion
 
-
-        #region Команда редактирования позиции
-
-        private readonly RelayCommand? _changedAnimal;
+        #region Открытие окна редактирования животного
 
         /// <summary>
-        /// Команда изменения позиции
+        /// Окно редактирования животного
+        /// </summary>
+        internal static void OpenChangedAnimalWindowMethod(Animal animal)
+        {
+            OldAnimal = animal;
+            ChangedAnimalWindow changedEnimalWindow = new();
+            MainMethods.SetCenterPositionAndOpen(changedEnimalWindow);
+        }
+
+        #endregion
+
+        #region Команда редактирования животного
+
+        private readonly RelayCommand? _changedAnimal ;
+
+        /// <summary>
+        /// Команда изменения животного
         /// </summary>
         public RelayCommand ChangedAnimal
         {
@@ -40,15 +54,12 @@ namespace Homework_18_Patterns.ViewModels.Commands
             {
                 return _changedAnimal ?? new RelayCommand(obj =>
                 {
-                    Window window = obj as Window;
-
                     string resultStr = "не выбрано животное";
 
-                    if(SelectedAnimal != null)
+                    if (OldAnimal != null)
                     {
-                        resultStr = DataAnimal.ChangedAnimal(SelectedAnimal, NewAnimalName, NewColor, NewAge);
+                        resultStr = DataAnimal.ChangedAnimal(OldAnimal, NewAnimalName, NewColor, NewAge);
                         MainMethods.ShowMessageToUser(resultStr);
-                        window.Close();
                     }
                     else
                     {

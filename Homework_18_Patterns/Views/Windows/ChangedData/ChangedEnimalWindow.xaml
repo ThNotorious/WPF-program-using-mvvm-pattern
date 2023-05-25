@@ -1,4 +1,4 @@
-﻿<Window x:Class="Homework_18_Patterns.Views.Windows.ChangedData.ChangedEnimalWindow"
+﻿<Window x:Class="Homework_18_Patterns.Views.Windows.ChangedData.ChangedAnimalWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -25,13 +25,13 @@
                     VerticalAlignment="Center"
                     Width="200">
             <TextBlock Text="Новая кличка"/>
-            <TextBox Text="{Binding AnimalName}"/>
+            <TextBox Text="{Binding NewAnimalName}"/>
 
             <TextBlock Text="Новый окрас"/>
-            <TextBox Text="{Binding Color}"/>
+            <TextBox Text="{Binding NewColor}"/>
 
             <TextBlock Text="Возраст"/>
-            <TextBox Text="{Binding Age}"/>
+            <TextBox Text="{Binding NewAge}"/>
 
         </StackPanel>
         <Button Grid.Row="1" 

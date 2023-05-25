@@ -1,4 +1,5 @@
 ﻿using Homework_18_Patterns.Data;
+using System;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -38,18 +39,25 @@ namespace Homework_18_Patterns.ViewModels.MethodsForCommands
         /// <param name="nameFile"></param>
         private static void SaveData(string nameFile)
         {
-            using var context = new ApplicationContext();
-            var animals = context.Animals.ToList();
-
-            using FileStream fileStream = new(nameFile, FileMode.Create);
-            using StreamWriter writer = new(fileStream, Encoding.Unicode);
-            
-            foreach (var animal in animals)
+            try
             {
-                writer.WriteLine(animal.ToString());
+                using var context = new ApplicationContext();
+                var animals = context.Animals.ToList();
+
+                using FileStream fileStream = new(nameFile, FileMode.Create);
+                using StreamWriter writer = new(fileStream, Encoding.Unicode);
+
+                foreach (var animal in animals)
+                {
+                    writer.WriteLine(animal.ToString());
+                }
+                ShowMessageToUser("Данные успешно сохранены!");
             }
-          
-            ShowMessageToUser("Данные успешно сохранены!");
+            catch (Exception ex)
+            {
+                ShowMessageToUser(ex.Message);
+            }
+
         }
     }
 }

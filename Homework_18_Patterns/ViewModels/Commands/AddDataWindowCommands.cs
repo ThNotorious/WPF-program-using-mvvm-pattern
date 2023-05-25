@@ -13,7 +13,7 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// <summary>
         /// Свойство привязанное к TextBox для получения названия нового класса
         /// </summary>
-        public string? ClassName { get; set; }
+        internal string? ClassName { get; set; }
 
         #endregion
 
@@ -24,7 +24,7 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// <summary>
         /// Команда создания нового класса
         /// </summary>
-        public RelayCommand AddNewClassWindowCommand
+        internal RelayCommand AddNewClassWindowCommand
         {
             get
             {
@@ -70,7 +70,7 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// <summary>
         /// Команда создания нового вида
         /// </summary>
-        public RelayCommand AddNewSpeciesWindowCommand
+        internal RelayCommand AddNewSpeciesWindowCommand
         {
             get
             {
@@ -98,33 +98,33 @@ namespace Homework_18_Patterns.ViewModels.Commands
 
         #endregion
 
-       
+
         #region Свойства для создания нового животного
 
         /// <summary>
         /// Свойство привязанное к TextBox для получения клички нового животного
         /// </summary>
-        public string? AnimalName { get; set; }
+        internal string? AnimalName { get; set; }
 
         /// <summary>
         /// Свойство привязанное к TextBox для получения окраса нового животного
         /// </summary>
-        public string? Color { get; set; }
+        internal string? Color { get; set; }
 
         /// <summary>
         /// Свойство привязанное к TextBox для получения возраста нового животного
         /// </summary>
-        public int Age { get; set; }
+        internal int Age { get; set; }
 
         /// <summary>
         /// Свойство привязанное к TextBox для получения пола нового животного
         /// </summary>
-        public string? Gender { get; set; }
+        internal string? Gender { get; set; }
 
         /// <summary>
         /// Свойство для привязки жиотного к конкретному виду
         /// </summary>
-        public AnimalSpecies AnimalSpecies { get; set; }
+        internal AnimalSpecies AnimalSpecies { get; set; }
 
         #endregion
 
@@ -135,7 +135,7 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// <summary>
         /// Команда создания нового жиотного
         /// </summary>
-        public RelayCommand AddNewAnimalWindowCommand
+        internal RelayCommand AddNewAnimalWindowCommand
         {
             get
             {

@@ -12,7 +12,7 @@ namespace Homework_18_Patterns.Models
         /// Получить все классы
         /// </summary>
         /// <returns></returns>
-        public static List<AnimalClass> GetAllClasses()
+        internal static List<AnimalClass> GetAllClasses()
         {
             using (ApplicationContext db = new())
             {
@@ -25,7 +25,7 @@ namespace Homework_18_Patterns.Models
         /// Получить все виды
         /// </summary>
         /// <returns></returns>
-        public static List<AnimalSpecies> GetAllSpecies()
+        internal static List<AnimalSpecies> GetAllSpecies()
         {
             using (ApplicationContext db = new())
             {
@@ -38,7 +38,7 @@ namespace Homework_18_Patterns.Models
         /// Получить всех животных
         /// </summary>
         /// <returns></returns>
-        public static List<Animal> GetAllAnimals()
+        internal static List<Animal> GetAllAnimals()
         {
             using (ApplicationContext db = new())
             {
@@ -46,13 +46,13 @@ namespace Homework_18_Patterns.Models
                 return result;
             }
         }
-       
+
         /// <summary>
         /// Получить вид животного
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static AnimalSpecies GetSpeciesById(int id)
+        internal static AnimalSpecies GetSpeciesById(int id)
         {
             using (ApplicationContext db = new())
             {
@@ -66,7 +66,7 @@ namespace Homework_18_Patterns.Models
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static AnimalClass GetClassById(int id)
+        internal static AnimalClass GetClassById(int id)
         {
             using (ApplicationContext db = new())
             {
@@ -80,7 +80,7 @@ namespace Homework_18_Patterns.Models
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static List<Animal> GetAllAnimalsBySpeciesId(int id)
+        internal static List<Animal> GetAllAnimalsBySpeciesId(int id)
         {
             using (ApplicationContext db = new())
             {
@@ -94,7 +94,7 @@ namespace Homework_18_Patterns.Models
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static List<AnimalSpecies> GetAllSpeciesesByClassId(int id)
+        internal static List<AnimalSpecies> GetAllSpeciesesByClassId(int id)
         {
             using (ApplicationContext db = new())
             {
@@ -112,7 +112,7 @@ namespace Homework_18_Patterns.Models
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public static string CreateClass(string name)
+        internal static string CreateClass(string name)
         {
             string result = "Уже существует";
             using (ApplicationContext db = new ApplicationContext())
@@ -136,7 +136,7 @@ namespace Homework_18_Patterns.Models
         /// <param name="name"></param>
         /// <param name="animalClass"></param>
         /// <returns></returns>
-        public static string CreateSpecies(string name, AnimalClass animalClass)
+        internal static string CreateSpecies(string name, AnimalClass animalClass)
         {
             string result = "Уже существует";
             using (ApplicationContext db = new ApplicationContext())
@@ -163,7 +163,7 @@ namespace Homework_18_Patterns.Models
         /// <param name="gender"></param>
         /// <param name="animalSpecies"></param>
         /// <returns></returns>
-        public static string CreateAnimal(string name, string color, int age, string gender, AnimalSpecies animalSpecies)
+        internal static string CreateAnimal(string name, string color, int age, string gender, AnimalSpecies animalSpecies)
         {
             string result = "Уже существует";
             using (ApplicationContext db = new ApplicationContext())
@@ -200,7 +200,7 @@ namespace Homework_18_Patterns.Models
         /// </summary>
         /// <param name="animalClass"></param>
         /// <returns></returns>
-        public static string DeleteClass(AnimalClass animalClass)
+        internal static string DeleteClass(AnimalClass animalClass)
         {
             string result = "Такого класса не существует в базе";
             using (ApplicationContext db = new())
@@ -217,7 +217,7 @@ namespace Homework_18_Patterns.Models
         /// </summary>
         /// <param name="animalClass"></param>
         /// <returns></returns>
-        public static string DeleteSpecies(AnimalSpecies animalSpecies)
+        internal static string DeleteSpecies(AnimalSpecies animalSpecies)
         {
             string result = "Такого вида не существует в базе";
             using (ApplicationContext db = new())
@@ -234,7 +234,7 @@ namespace Homework_18_Patterns.Models
         /// </summary>
         /// <param name="animalSpecies"></param>
         /// <returns></returns>
-        public static string DeleteAnimal(Animal animal)
+        internal static string DeleteAnimal(Animal animal)
         {
             string result = "Такого животного не существует в базе";
             using (ApplicationContext db = new())
@@ -255,7 +255,7 @@ namespace Homework_18_Patterns.Models
         /// </summary>
         /// <param name="animal"></param>
         /// <returns></returns>
-        public static string ChangedAnimal(Animal oldAnimal, string newName, string newColor, int newAge)
+        internal static string ChangedAnimal(Animal oldAnimal, string newName, string newColor, int newAge)
         {
             string result = "Такого животного не существует в базе";
             using (ApplicationContext db = new())
@@ -272,7 +272,6 @@ namespace Homework_18_Patterns.Models
         }
 
         #endregion
-
     }
 }
 

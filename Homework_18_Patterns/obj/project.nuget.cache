@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sBaGmDarBaZjkI6gu62cqrozQo+LmSUfvpdZIxJeCR7z8AfMMqO3Gm3gZwvt9iJLNMKpcbYTt8J/SlkSDG0t7Q==",
+  "dgSpecHash": "Fp1l0cdL7dwlpD2jMEJDFEq5QSOymC9zXNIGTl6/ZSOEDoYEpaKU0/IGt78gkorOLKL6QWo/lLiF5dM7RXXI+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\goldb\\OneDrive\\Рабочий стол\\C#\\Homework_18_Patterns\\Homework_18_Patterns\\Homework_18_Patterns.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "C:\\Users\\goldb\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\goldb\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
     "C:\\Users\\goldb\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\goldb\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
     "C:\\Users\\goldb\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\goldb\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\goldb\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
