@@ -1,8 +1,10 @@
-﻿using Homework_18_Patterns.Infrastructure.Commands;
+﻿using Homework_18_Patterns.Data;
+using Homework_18_Patterns.Infrastructure.Commands;
 using Homework_18_Patterns.Models;
 using Homework_18_Patterns.ViewModels.Base;
 using Homework_18_Patterns.ViewModels.MethodsForCommands;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Controls;
 
 namespace Homework_18_Patterns.ViewModels.Commands
@@ -76,6 +78,7 @@ namespace Homework_18_Patterns.ViewModels.Commands
         }
         #endregion
 
+    
         #region Свойства привязки базы данных к DataGrid
 
         /// <summary>
@@ -243,6 +246,26 @@ namespace Homework_18_Patterns.ViewModels.Commands
 
         #endregion
 
+        #region Обновление View после изменения данных
+        private readonly RelayCommand? _updateViewCommand;
+
+        public RelayCommand UpdateViewCommand
+        {
+            get { return _updateViewCommand ?? new RelayCommand(obj => UpdateView()); }
+        }
+
+        public void UpdateView()
+        {
+            AllAnimals = DataAnimal.GetAllAnimals();
+            AllAnimalSpecieses = DataAnimal.GetAllSpecies();
+            AllAnimalClasses = DataAnimal.GetAllClasses();
+        }
+
         #endregion
+       
+        
+        #endregion
+
+
     }
 }

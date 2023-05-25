@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Homework_18_Patterns.ViewModels.MethodsForCommands
 {
-    internal class SaveFromDataBaseMethods
+    internal class SaveFromDataBaseMethods : MainMethods
     {
         /// <summary>
        /// Сохранение в формате World
@@ -48,7 +48,8 @@ namespace Homework_18_Patterns.ViewModels.MethodsForCommands
             {
                 writer.WriteLine(animal.ToString());
             }
+          
+            ShowMessageToUser("Данные успешно сохранены!");
         }
-
     }
 }
