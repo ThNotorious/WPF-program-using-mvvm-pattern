@@ -29,14 +29,16 @@ namespace Homework_18_Patterns.ViewModels.Commands
 
         #region Открытие окна редактирования животного
 
+        private static ChangedAnimalWindow _changedEnimalWindow;
+
         /// <summary>
         /// Окно редактирования животного
         /// </summary>
         internal static void OpenChangedAnimalWindowMethod(Animal animal)
         {
             OldAnimal = animal;
-            ChangedAnimalWindow changedEnimalWindow = new();
-            MainMethods.SetCenterPositionAndOpen(changedEnimalWindow);
+            _changedEnimalWindow = new();
+            MainMethods.SetCenterPositionAndOpen(_changedEnimalWindow);
         }
 
         #endregion
@@ -59,6 +61,7 @@ namespace Homework_18_Patterns.ViewModels.Commands
                     if (OldAnimal != null)
                     {
                         resultStr = DataAnimal.ChangedAnimal(OldAnimal, NewAnimalName, NewColor, NewAge);
+                        _changedEnimalWindow.Close();
                         MainMethods.ShowMessageToUser(resultStr);
                     }
                     else
