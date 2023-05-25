@@ -13,7 +13,7 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// <summary>
         /// Свойство привязанное к TextBox для получения названия нового класса
         /// </summary>
-        internal string? ClassName { get; set; }
+        public string? ClassName { get; set; }
 
         #endregion
 
@@ -24,7 +24,7 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// <summary>
         /// Команда создания нового класса
         /// </summary>
-        internal RelayCommand AddNewClassWindowCommand
+        public RelayCommand AddNewClassWindowCommand
         {
             get
             {
@@ -39,8 +39,8 @@ namespace Homework_18_Patterns.ViewModels.Commands
                     }
                     else
                     {
-                        MainMethods.ShowMessageToUser(DataAnimal.CreateClass(ClassName));
                         window.Close();
+                        MainMethods.ShowMessageToUser(DataAnimal.CreateClass(ClassName));
                     }
                 });
             }
@@ -70,7 +70,7 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// <summary>
         /// Команда создания нового вида
         /// </summary>
-        internal RelayCommand AddNewSpeciesWindowCommand
+        public RelayCommand AddNewSpeciesWindowCommand
         {
             get
             {
@@ -89,8 +89,8 @@ namespace Homework_18_Patterns.ViewModels.Commands
                     }
                     else
                     {
-                        MainMethods.ShowMessageToUser(DataAnimal.CreateSpecies(SpeciesName, SpeciesClass));
                         window.Close();
+                        MainMethods.ShowMessageToUser(DataAnimal.CreateSpecies(SpeciesName, SpeciesClass));
                     }
                 });
             }
@@ -104,38 +104,38 @@ namespace Homework_18_Patterns.ViewModels.Commands
         /// <summary>
         /// Свойство привязанное к TextBox для получения клички нового животного
         /// </summary>
-        internal string? AnimalName { get; set; }
+        public string? AnimalName { get; set; }
 
         /// <summary>
         /// Свойство привязанное к TextBox для получения окраса нового животного
         /// </summary>
-        internal string? Color { get; set; }
+        public string? Color { get; set; }
 
         /// <summary>
         /// Свойство привязанное к TextBox для получения возраста нового животного
         /// </summary>
-        internal int Age { get; set; }
+        public int Age { get; set; }
 
         /// <summary>
         /// Свойство привязанное к TextBox для получения пола нового животного
         /// </summary>
-        internal string? Gender { get; set; }
+        public string? Gender { get; set; }
 
         /// <summary>
-        /// Свойство для привязки жиотного к конкретному виду
+        /// Свойство для привязки животного к конкретному виду
         /// </summary>
-        internal AnimalSpecies AnimalSpecies { get; set; }
+        public AnimalSpecies AnimalSpecies { get; set; }
 
         #endregion
 
         #region Команда создания нового животного
-        
+
         private readonly RelayCommand? _openAddAnimalWindowCommand;
 
         /// <summary>
         /// Команда создания нового жиотного
         /// </summary>
-        internal RelayCommand AddNewAnimalWindowCommand
+        public RelayCommand AddNewAnimalWindowCommand
         {
             get
             {
@@ -153,8 +153,8 @@ namespace Homework_18_Patterns.ViewModels.Commands
                     }
                     else
                     {
-                        MainMethods.ShowMessageToUser(DataAnimal.CreateAnimal(AnimalName, Color, Age, Gender, AnimalSpecies));
                         window.Close();
+                        MainMethods.ShowMessageToUser(DataAnimal.CreateAnimal(AnimalName, Color, Age, Gender, AnimalSpecies));
                     }
                 });
             }
